@@ -10,12 +10,12 @@ const Pokedex = () => {
 
 
   // const [data, setData] = value1
-  console.log(data)
+  console.log(data.results)
 
 
   return (
     <>
-    {data.result}
+    {!data.results}
     {isLoading && 
       <h1>Pokedex</h1>}
       <Link to="/game" className='game'>Game</Link>

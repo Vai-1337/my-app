@@ -1,16 +1,13 @@
-import React from 'react'
-import '../css/playercpu.css'
-import randomPokemonCpu from './PokeCard'
+import React from "react";
 
-const PlayerCPU = () => {
+const PlayerCPU = (props) => {
   return (
     <>
-      <div className='player-cpu'>
-        
-      </div>
+      <img src={props.image} alt="pokemon" style={{ width: "120px" }} />
+      <h1>{props.name}</h1>
+      <p>{props.hp}</p>
     </>
+  );
+};
 
-  )
-}
-
-export default PlayerCPU
+export default PlayerCPU;

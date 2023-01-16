@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
-const PlayerHuman = () => {
+const PlayerHuman = (props) => {
   return (
-    <div>PlayerHuman</div>
-  )
-}
+    <>
+      <img src={props.image} alt="pokemon" style={{ width: "120px" }} />
+      <h1>{props.name}</h1>
+      <p>{props.hp}</p>
+    </>
+  );
+};
 
-export default PlayerHuman
+export default PlayerHuman;

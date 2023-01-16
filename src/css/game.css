@@ -1,8 +1,36 @@
 .game{
     width: 100%;
     height: 100%;
-    background-color: #000;
-    position: relative;
+    background-color: rgb(153, 210, 156);
     overflow: hidden;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 500px;
+}
+
+.player{   
+    width:100%;
+    height: 50px;    
+    display: flex;
+    justify-content: space-between;
+}
+
+.player-cpu, .player-human{   
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.blockFight{
+    display: flex;
+    flex-direction: column;
+}
+.btn {
+    width:150px;
+    height: 50px;
+    background-color: rgb(183, 40, 40);
+    border: 1px solid black;
+    margin: 10px;
 }
