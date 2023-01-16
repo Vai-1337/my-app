@@ -5,7 +5,7 @@ export const PokeContext = createContext();
 
 export const PokeController = ({ children }) => {
     const [data, setData] = useState([])
-    const [isLoading, setIsLoading] = useState(false);    
+    const [isLoading, setIsLoading] = useState(true);    
     const [isActive, setActive] = useState(false);
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/")
 
