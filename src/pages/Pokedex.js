@@ -1,20 +1,45 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { PokeContext } from "../context/PokeContext";
 import PokeList from "../components/PokeList";
 import PokeCard from "../components/PokeCard";
 import "../css/pokedex.css";
 
 const Pokedex = () => {
-  const { value, value1, value4 } = useContext(PokeContext);
+  const { value, value1, value4, value5, value6,value7 } = useContext(PokeContext);
   const [data] = value;
-  const [data2] = value1;
+  const [data2, setData2] = value1;
   const [pokeDex] = value4;
+  const [nextUrl, setNextUrl] = value5;
+  const [prevUrl, setPrevUrl] = value6;
+  const [url, setUrl] = value7
 
   console.log(data, data2);
 
   return (
     <>
+      <div className="btn-group">
+      {prevUrl && (
+        <button
+          onClick={() => {
+            setData2([]);
+            setUrl(prevUrl);
+          }}
+        >
+          Previous
+        </button> )}
+
+        {nextUrl && (
+        <button
+          onClick={() => {
+            setData2([]);
+            setUrl(nextUrl);
+          }}
+        >
+          Next
+        </button>
+        )}
+      </div>
       <h1 className="pokedex">Pokedex</h1>
 
       <div>

@@ -10,13 +10,16 @@ export const PokeController = ({ children }) => {
   const [isActive, setActive] = useState(false);
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
   const [pokeDex, setPokeDex] = useState();
+  const [nextUrl, setNextUrl] = useState();
+  const [prevUrl, setPrevUrl] = useState();
 
   const pokeFetch = async () => {
     try {
       setIsLoading(true);
       const response = await axios.get(url);
-      setData(response.data.results);
-      pokeFetch2(response.data.results);      
+      setNextUrl(response.data.next);
+      setPrevUrl(response.data.previous);
+      pokeFetch2(response.data.results);
     } catch (err) {
       console.log(err);
     }
@@ -35,7 +38,7 @@ export const PokeController = ({ children }) => {
 
   useEffect(() => {
     pokeFetch();
-  }, []);
+  }, [url]);
 
   return (
     <PokeContext.Provider
@@ -44,7 +47,10 @@ export const PokeController = ({ children }) => {
         value1: [data2, setData2],
         value2: [isLoading, setIsLoading],
         value3: [isActive, setActive],
-        value4: [pokeDex, setPokeDex]
+        value4: [pokeDex, setPokeDex],
+        value5: [nextUrl, setNextUrl],
+        value6: [prevUrl, setPrevUrl],
+        value7: [url, setUrl],
       }}
     >
       {isLoading && children}
