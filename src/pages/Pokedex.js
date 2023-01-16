@@ -21,12 +21,9 @@ const Pokedex = () => {
         <PokeList />
       </div>
 
-      {/* <div className="pokecard">
-        <PokeCard />
-      </div>       */}
       <div className="container2">
-          <PokeCard data={pokeDex} />
-        </div>
+        <PokeCard data={pokeDex} />
+      </div>
     </>
   );
 };
