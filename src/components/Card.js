@@ -1,12 +1,16 @@
 import React from "react";
 const Card = ({ pokemon, loading, infoPokemon }) => {
+
+  const uniquePokemon = Array.from(new Set(pokemon.map(p => p.id))).map(id => {
+    return pokemon.find(p => p.id === id)
+  })
   // console.log(pokemon);
   return (
     <>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        pokemon.map((item) => {
+        uniquePokemon.map((item) => {
           return (
             <>
               <div
