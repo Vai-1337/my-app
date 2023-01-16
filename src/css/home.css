@@ -1,0 +1,11 @@
+.home {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    font-size:20px;
+    border: 2px solid black ;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #edc82c;
+}
