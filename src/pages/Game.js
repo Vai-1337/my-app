@@ -1,3 +1,4 @@
+
 import React, { useState, useContext } from "react";
 import { PokeContext } from "../context/PokeContext";
 import PlayerHuman from "../components/PlayerHuman";
@@ -20,5 +21,6 @@ const Game = () => {
     </>
   );
 };
+
 
 export default Game;

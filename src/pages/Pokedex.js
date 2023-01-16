@@ -8,10 +8,7 @@ const Pokedex = () => {
   const [data, setData] = value
   const [isLoading, setIsLoading] = value2;
 
-
-  // const [data, setData] = value1
   console.log(data)
-
 
   return (
     <>

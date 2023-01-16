@@ -5,7 +5,10 @@ import '../css/home.css'
 const Home = () => {
   return (
     <>
+    <div className="home">
+    <br />
       <Link to="/pokedex" className='pokedex'>Pokedex</Link>
+      </div>
       
     </>
   )
