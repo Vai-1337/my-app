@@ -12,10 +12,10 @@ export const PokeController = ({ children }) => {
 
     const pokeFetch = async () => {
         try {
-            const response = await axios.get
-            (url)
-            setData(response.data)
             setIsLoading(true);
+            const response = await axios.get(url)
+            setData(response.data.results)
+            
         } catch (err) {
             console.log(err)
         }
