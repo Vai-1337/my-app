@@ -8,10 +8,10 @@ import { PokeController } from "./context/PokeContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-  <PokeController>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <PokeController>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </PokeController>
   </React.StrictMode>
 );
