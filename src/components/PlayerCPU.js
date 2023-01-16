@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/player.css'
+import '../css/playercpu.css'
 
 const PlayerCPU = () => {
   return (
