@@ -8,12 +8,16 @@ const PokeList = () => {
   const [data2] = value1;
   const [isLoading] = value2;
 
+  const filterData2 = data2.filter(
+    (e, index, self) => self.findIndex((e) => e.id === e.id) === index
+  );
+
   return (
     <>
       {!isLoading ? (
         <h1>Loading</h1>
       ) : (
-        data2.map((e) => {
+        filterData2.map((e) => {
           return (
             <div key={e.id} className="container">
               <h2>{e.id} </h2>

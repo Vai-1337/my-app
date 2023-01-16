@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PokeCard = () => {
+const PokeCard = ({data}) => {
   return (
     <div>PokeCard</div>
     // afficher les infos du pokemon sélectionné "pokeInfo"
