@@ -1,13 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { isActive } from 'react-router-dom'
 
 
-import '../css/playerhuman.css'
+const PlayerHuman = (props) => {
 
-
-const PlayerHuman = () => {
   return (
-    <div>PlayerHuman</div>
-  )
-}
+    <>
+      <img src={props.image} alt="pokemon" style={{ width: "120px"}} />      
+      <h1 >{props.name}</h1>
+      <h1 className={isActive ? "active" : null}>{props.hp}</h1>
+    </>
+  );
+};
 
-export default PlayerHuman
+export default PlayerHuman;
