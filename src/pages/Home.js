@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
       <Link to="/pokedex" className='pokedex'>Pokedex</Link>
-      <Link to="/game" className='game'>Game</Link>
+      
     </>
   )
 }

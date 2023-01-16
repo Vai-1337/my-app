@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext, useState } from 'react';
 import { PokeContext } from '../context/PokeContext';
+import { Link } from 'react-router-dom'
 
 const Pokedex = () => {
   const {value, value2} = useContext(PokeContext)
@@ -17,6 +18,7 @@ const Pokedex = () => {
     {data.result}
     {isLoading && 
       <h1>Pokedex</h1>}
+      <Link to="/game" className='game'>Game</Link>
     </>
   )
 }
