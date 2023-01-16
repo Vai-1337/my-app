@@ -1,5 +1,4 @@
 import React from 'react'
-import '../css/playerhuman'
 
 const PlayerHuman = () => {
   return (
