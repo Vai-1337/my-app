@@ -1,14 +1,11 @@
-import React from 'react';
-import { isActive } from 'react-router-dom'
-
+import React from "react";
 
 const PlayerHuman = (props) => {
-
   return (
     <>
-      <img src={props.image} alt="pokemon" style={{ width: "120px"}} />      
-      <h1 >{props.name}</h1>
-      <h1 className={isActive ? "active" : null}>{props.hp}</h1>
+      <img src={props.image} alt="pokemon" style={{ width: "120px" }} />
+      <h1>{props.name}</h1>
+      <h1>{props.hp}</h1>
     </>
   );
 };
