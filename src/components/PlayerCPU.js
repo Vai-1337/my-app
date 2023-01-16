@@ -1,10 +1,15 @@
 import React from 'react'
 import '../css/playercpu.css'
+import randomPokemonCpu from './PokeCard'
 
 const PlayerCPU = () => {
   return (
-    <div>PlayerCPU</div>
-    
+    <>
+      <div className='player-cpu'>
+        
+      </div>
+    </>
+
   )
 }
 
