@@ -12,10 +12,7 @@ const Pokedex = () => {
 
 
 
-
-  // const [data, setData] = value1
   console.log(data)
-
 
   return (
     <>

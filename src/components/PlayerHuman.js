@@ -1,15 +1,9 @@
-import React, { useContext, useState}from "react";
-import { ProgressBar } from "react-bootstrap";
-import { PokeContext } from '../context/PokeContext';
+import React from 'react';
+import { isActive } from 'react-router-dom'
 
 
 const PlayerHuman = (props) => {
-  const {value3} = useContext(PokeContext)
-  const [isActive, setActive] = value3
 
-  const changeColorHp = () => {
-    setActive(!isActive);
-  };
   return (
     <>
       <img src={props.image} alt="pokemon" style={{ width: "120px"}} />      
