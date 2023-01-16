@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { PokeContext } from "../context/PokeContext";
 import PlayerHuman from "../components/PlayerHuman";
 import PlayerCpu from "../components/PlayerCpu";
+// import Button  from "react-bootstrap";
 import Winner from "../components/Winner";
 import "../css/game.css";
 
@@ -35,7 +36,8 @@ const Game = () => {
           <div className="player">
             <div className="blockFight">
               <PlayerHuman {...playerHuman} />
-              <button className="btn">Attack</button>
+              
+              <button className="btn-primary" onClick={() => attack()}>Attack</button>
             </div>
 
             <div className="blockFight">
