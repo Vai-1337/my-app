@@ -10,3 +10,21 @@
     position: relative;
     overflow: hidden;
 }
+
+.container{
+    width: 380px;
+    height: 90px;
+    margin: 15px;
+    padding:10px;
+    background: rgb(70, 68, 64);
+    color: rgb(255, 248, 224);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgb(90, 75, 46);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container:hover{
+    box-shadow: 0 0 10px 0 rgb(255, 248, 224);
+    transform: scale(1.05);
+}

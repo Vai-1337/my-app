@@ -9,6 +9,7 @@ export const PokeController = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isActive, setActive] = useState(false);
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
+  const [pokeDex, setPokeDex] = useState();
 
   const pokeFetch = async () => {
     try {
@@ -43,6 +44,7 @@ export const PokeController = ({ children }) => {
         value1: [data2, setData2],
         value2: [isLoading, setIsLoading],
         value3: [isActive, setActive],
+        value4: [pokeDex, setPokeDex]
       }}
     >
       {isLoading && children}

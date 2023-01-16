@@ -1,15 +1,15 @@
 import React from "react";
 import { useContext } from "react";
 import { PokeContext } from "../context/PokeContext";
-import { Link } from "react-router-dom";
 import PokeList from "../components/PokeList";
 import PokeCard from "../components/PokeCard";
 import "../css/pokedex.css";
 
 const Pokedex = () => {
-  const { value, value1 } = useContext(PokeContext);
+  const { value, value1, value4 } = useContext(PokeContext);
   const [data] = value;
   const [data2] = value1;
+  const [pokeDex] = value4;
 
   console.log(data, data2);
 
@@ -17,17 +17,16 @@ const Pokedex = () => {
     <>
       <h1 className="pokedex">Pokedex</h1>
 
-      <div className="pokelist">
+      <div>
         <PokeList />
       </div>
 
-      <div className="pokecard">
+      {/* <div className="pokecard">
         <PokeCard />
-      </div>
-
-      <Link to="/game" className="game">
-        Game
-      </Link>
+      </div>       */}
+      <div className="container2">
+          <PokeCard data={pokeDex} />
+        </div>
     </>
   );
 };

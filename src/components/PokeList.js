@@ -15,12 +15,9 @@ const PokeList = () => {
       ) : (
         data2.map((e) => {
           return (
-            <div className="card" key={e.id}>
-              <img
-                className="pokecard "
-                src={e.sprites.front_default}
-                alt="pokemon"
-              />
+            <div key={e.id} className="container">
+              <h2>{e.id} </h2>
+              <img src={e.sprites.front_default} alt="pokemon" />
               <h2>{e.name}</h2>
             </div>
           );
