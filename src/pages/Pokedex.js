@@ -4,18 +4,18 @@ import { PokeContext } from "../context/PokeContext";
 import { Link } from "react-router-dom";
 import PokeList from "../components/PokeList";
 import PokeCard from "../components/PokeCard";
-import '../css/pokedex.css'
+import "../css/pokedex.css";
 
 const Pokedex = () => {
-  const { value, value2 } = useContext(PokeContext);
+  const { value, value1 } = useContext(PokeContext);
   const [data] = value;
-  const [isLoading] = value2;
+  const [data2] = value1;
 
-  console.log(data);
+  console.log(data, data2);
 
   return (
     <>
-      <h1 className='pokedex'>Pokedex</h1>
+      <h1 className="pokedex">Pokedex</h1>
 
       <div className="pokelist">
         <PokeList />
