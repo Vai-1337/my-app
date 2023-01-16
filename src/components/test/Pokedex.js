@@ -1,9 +1,8 @@
 import React from "react";
 import { useContext, useState } from "react";
-import { PokeContext } from "../context/PokeContext";
-import PokeList from "../components/PokeList";
-import PokeCard from "../components/PokeCard";
-import "../css/pokedex.css";
+import { PokeContext } from "../../context/PokeContext";
+import PokeList from "./PokeList";
+import PokeCard from "./PokeCard";
 
 const Pokedex = () => {
   const { value, value1, value4, value5, value6,value7 } = useContext(PokeContext);
@@ -14,7 +13,7 @@ const Pokedex = () => {
   const [prevUrl, setPrevUrl] = value6;
   const [url, setUrl] = value7
 
-  console.log(data, data2);
+  console.log(data2);
 
   return (
     <>

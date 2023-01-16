@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { PokeContext } from "../context/PokeContext";
+import { PokeContext } from "../../context/PokeContext";
 
 const PokeList = () => {
   const { value1, value2 } = useContext(PokeContext);
