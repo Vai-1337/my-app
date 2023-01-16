@@ -5,16 +5,15 @@ export const PokeContext = createContext();
 
 export const PokeController = ({ children }) => {
     const [data, setData] = useState([])
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);    
+    const [isActive, setActive] = useState(false);
+    const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/")
 
-    const [data2, setData2] = useState([])
-    
 
     const pokeFetch = async () => {
         try {
-            const response = await axios.get(
-                'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151'
-            )
+            const response = await axios.get
+            (url)
             setData(response.data)
             setIsLoading(true);
         } catch (err) {
@@ -22,12 +21,13 @@ export const PokeController = ({ children }) => {
         }
     }
 
+    
     useEffect(() => {
         pokeFetch()
     }, []);
     
     return(
-        <PokeContext.Provider value={{value: [data, setData], value2: [isLoading, setIsLoading], value3: [data2, setData2]}}>
+        <PokeContext.Provider value={{value: [data, setData], value2: [isLoading, setIsLoading], value3:[isActive, setActive]}}>
             { isLoading && children }
         </PokeContext.Provider>
     )

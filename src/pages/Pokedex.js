@@ -7,18 +7,32 @@ const Pokedex = () => {
   const {value, value2} = useContext(PokeContext)
   const [data, setData] = value
   const [isLoading, setIsLoading] = value2;
+  const [nextUrl, setNextUrl] = useState();
+  const [prevtUrl, setPrevUrl] = useState();
+
+
 
 
   // const [data, setData] = value1
-  console.log(data.results)
+  console.log(data)
 
 
   return (
     <>
     {!data.results}
     {isLoading && 
-      <h1>Pokedex</h1>}
-      <Link to="/game" className='game'>Game</Link>
+      data.results.map((e, i) => {
+        return(
+          <>
+          <h1 key={i}>{e.name}</h1>
+          <p> {e.url} </p>
+          {console.log(e)}
+          
+          </>
+        )
+      })}
+      <h1>Pokedex</h1>
+      {/* <Link to="/game" className='game'>Game</Link> */}
     </>
   )
 }
