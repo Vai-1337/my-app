@@ -7,26 +7,28 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
       return pokemon.find((p) => p.id === id);
     }
   );
-  // console.log(pokemon);
   return (
     <>
-    
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        
-        <Carousel className="caroussel" style={{width:'200px', display:'flex',justifyContent:'space-around'}}>
+        <Carousel
+          className="caroussel"
+          style={{
+            width: "200px",
+            display: "flex",
+            justifyContent: "space-around",
+          }}
+        >
           {uniquePokemon.map((item) => {
             return (
-              
-              <Carousel.Item key={item.id} >
+              <Carousel.Item key={item.id}>
                 <img
                   className="imgcaroussel"
-                  
                   src={item.sprites.front_default}
                   alt=""
                 />
-                <Carousel.Caption >
+                <Carousel.Caption>
                   <h3>{item.name}</h3>
                   <p>{item.id}</p>
                   <p>
@@ -38,9 +40,7 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
                     </button>
                   </p>
                 </Carousel.Caption>
-                
               </Carousel.Item>
-              
             );
           })}
         </Carousel>

@@ -3,6 +3,7 @@ import Card from "./Card";
 import Pokeinfo from "./Pokeinfo";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Game from "../pages/Game";
 
 const Main = () => {
   const [pokeData, setPokeData] = useState([]);
@@ -36,13 +37,13 @@ const Main = () => {
   return (
     <>
       <div className="container">
-        <div className="left-content">
+        
           <Card
             pokemon={pokeData}
             loading={loading}
             infoPokemon={(poke) => setPokeDex(poke)}
           />
-
+<div className="left-content">
           <div className="btn-group">
             {prevUrl && (
               <button
@@ -62,7 +63,7 @@ const Main = () => {
                   setUrl(nextUrl);
                 }}
               >
-                Next 20 pokemon
+                Next
               </button>
             )}
           </div>

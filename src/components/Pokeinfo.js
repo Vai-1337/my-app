@@ -1,4 +1,6 @@
 import React from "react";
+import Game from '../pages/Game'
+import { Link } from "react-router-dom";
 
 const Pokeinfo = ({ data }) => {
   return (
@@ -32,6 +34,8 @@ const Pokeinfo = ({ data }) => {
               );
             })}
           </div>
+          <br />
+          <Link to="/game"><button style={{width:'100px', height:'30px'}}>Game</button></Link>
         </>
       )}
     </>
