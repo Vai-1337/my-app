@@ -43,7 +43,7 @@ const Main = () => {
             infoPokemon={(poke) => setPokeDex(poke)}
           />
 
-          {/* <div className="btn-group">
+          <div className="btn-group">
             {prevUrl && (
               <button
                 onClick={() => {
@@ -62,10 +62,10 @@ const Main = () => {
                   setUrl(nextUrl);
                 }}
               >
-                Next
+                Next 20 pokemon
               </button>
             )}
-          </div> */}
+          </div>
         </div>
         <div className="right-content">
           <Pokeinfo data={pokeDex} />
