@@ -7,8 +7,6 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
   const { value9 } = useContext(PokeContext);
   const [stat2, setStat2] = value9;
 
-  
-
   const uniquePokemon = Array.from(new Set(pokemon.map((p) => p.id))).map(
     (id) => {
       return pokemon.find((p) => p.id === id);
@@ -39,8 +37,8 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
             return (
               <Carousel.Item key={item.id}>
                 <img
-                  className="imgcaroussel"
-                  src={item.sprites.front_default}
+                  style={{ width: "100px" }}
+                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${item.id}.svg`}
                   alt=""
                 />
                 <Carousel.Caption>
