@@ -15,6 +15,8 @@ const Game = () => {
   const [stat, setStat] = value8;
   const [stat2, setStat2] = value9;
   console.log(stat);
+  const [className, setClassName] = useState("cpu");
+  const [classNameHuman, setClassNameHuman] = useState("human");
 
   const [winner, setWinner] = useState("");
   const [playerSwitched, setPlayerSwitched] = useState(false);
@@ -46,9 +48,10 @@ const Game = () => {
     setTimeout(() => {
       if (newHp <= 0) {
         setWinner(playerHuman.name);
+        setClassName("dead")
       }
-      setPlayerSwitched(!playerSwitched);
-    }, 2000);
+      // setPlayerSwitched(!playerSwitched);
+    });
 
     setTimeout(() => {
       counterAttack();
@@ -59,20 +62,21 @@ const Game = () => {
   const counterAttack = () => {
     setTimeout(() => {
       let damage = 50;
-      let newHp = playerHuman.hp - damage;
+      let newHp = playerHuman.hp - playerCpu.attack;
 
-      setTimeout(() => {
-        setActive(true);
+      // setTimeout(() => {
+      //   setActive(true);
 
-        setPlayerSwitched(playerSwitched);
-      }, 3000);
+      //   setPlayerSwitched(playerSwitched);
+      // }, 3000);
 
       setPlayerHuman({ ...playerHuman, hp: newHp });
       if (newHp <= 0) {
         setWinner(playerCpu.name);
+        setClassNameHuman("deadhuman")
       }
       setActive(true);
-    }, 3000);
+    });
   };
 
   return (
@@ -86,21 +90,22 @@ const Game = () => {
         <div className="switch">
         
         <img src={nintendo} alt="" style={{width:'1115px',  height:'755px'}}/>
+        
         </div>
         <div className="decor-game">
-        <button className="attack-btn" onClick={() => attack()}>
-               
-              </button>
+         
+        <button className="attack-btn" onClick={() => attack()}> </button>
+              
           <img src={decor} alt="" style={{width:'100%',  height:'100%', borderRadius:'12px'}}/>
         </div>
         <div className="game2">
           <div className="player">
             <div className="blockFight">
-              {playerSwitched ? (
-                <PlayerCpu {...playerCpu} />
-              ) : (
-                <PlayerHuman {...playerHuman} />
-              )}
+              {/* {playerSwitched ? ( */}
+                {/* <PlayerCpu {...playerCpu} className={className}/> */}
+              {/* ) : ( */}
+                <PlayerHuman {...playerHuman} className={classNameHuman} />
+              {/* )} */}
 
               
             </div>
@@ -111,11 +116,11 @@ const Game = () => {
               </>
             )}
             <div>
-              {playerSwitched ? (
-                <PlayerHuman {...playerHuman} />
-              ) : (
-                <PlayerCpu {...playerCpu} />
-              )}
+              {/* {playerSwitched ? ( */}
+                {/* <PlayerHuman {...playerHuman} /> */}
+              {/* ) : ( */}
+                <PlayerCpu {...playerCpu} className={className} />
+              {/* )} */}
             </div>
           </div>
         </div>

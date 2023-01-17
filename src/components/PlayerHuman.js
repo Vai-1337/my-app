@@ -4,7 +4,7 @@ const PlayerHuman = (props) => {
   return (
     <>
       <div className="full-human">
-        <div className="human">
+        <div className={props.className}>
           <img
             className="playerGame"
             src={props.image}

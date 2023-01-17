@@ -4,7 +4,7 @@ const PlayerCpu = (props) => {
   return (
     <>
       <div className="full-cpu">
-        <div className="cpu">
+        <div className={props.className}>
           <img
             className="playerGame"
             src={props.image}
