@@ -8,7 +8,6 @@
   justify-content: center;
   align-items: center;
   height: 1000px;
-  /* border: 5px solid rgb(255, 0, 4); */
 }
 .winner {
   background-color: rgb(189, 137, 137);
@@ -24,9 +23,9 @@
 }
 .player {
   height: 500px;
-  display: flex ;
+  display: flex;  
   align-items: center;
-  justify-content: center ;
+  justify-content: center;
   z-index: 3;
   margin: 0px;
   border: 5px solid rgb(235, 235, 57);
@@ -48,14 +47,8 @@
 }
 .game2 {
   position: absolute;
-  /* z-index: 2;
-  border: 5px solid rgb(255, 0, 4);
-  width: 1100px;
-  height: 800px; */
 }
-
 .full-human {
-  /* position: absolute; */
   border: 5px solid rgb(85, 8, 86);
   width: 350px;
   height: 550px;
@@ -65,7 +58,7 @@
 }
 /* image */
 .human {
-  border: 5px solid rgb(34, 0, 255);
+  /* border: 5px solid rgb(34, 0, 255); */
   margin-top: 150px;
   z-index: 2;
 }
@@ -98,6 +91,29 @@
   width: 175px;
 }
 
+.human  {
+    animation-name: move-lightly;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  @keyframes move-lightly {
+    0% {
+      transform: translate(10px, 2px);
+    }
+    100% {
+      transform: translate(-2px, -10px);
+    }
+  }
+  @keyframes move-lightly2 {
+    50% {
+      transform: translate(10px, 2px);
+    }
+    100% {
+      transform: translate(-2px, -10px);
+    }
+  }
 /* image + stats */
 .full-cpu {
   /* position: absolute; */
@@ -109,8 +125,12 @@
 }
 /* image */
 .cpu {
-  border: 5px solid rgb(0, 149, 255);
-  /* margin-bottom: 500px; */
+    animation-name: move-lightly2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    margin-top: 100px;
+  /* border: 5px solid rgb(0, 149, 255); */  
   z-index: 2;
 }
 /* stats */

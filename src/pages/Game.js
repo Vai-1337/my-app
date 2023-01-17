@@ -86,7 +86,7 @@ const Game = () => {
         <img src={decor1} alt="" style={{width:'1115px',  height:'755px'}}/>
         </div>
         <div className="decor-game">
-          <img src={decor} alt="" style={{width:'100%',  height:'100%'}}/>
+          <img src={decor} alt="" style={{width:'100%',  height:'100%', borderRadius:'12px'}}/>
         </div>
         <div className="game2">
           <div className="player">
@@ -107,7 +107,7 @@ const Game = () => {
                 <br />
               </>
             )}
-            <div className="blockFight">
+            <div>
               {playerSwitched ? (
                 <PlayerHuman {...playerHuman} />
               ) : (
