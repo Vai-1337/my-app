@@ -5,7 +5,7 @@ import PlayerCpu from "../components/PlayerCpu";
 import Winner from "../components/Winner";
 import "../css/game.css";
 import decor from "../asset/decor.jpg";
-import decor1 from "../asset/nintendo.webp";
+import nintendo from "../asset/nintendo.webp";
 
 const Game = () => {
   const { value, value2, value3, value8, value9 } = useContext(PokeContext);
@@ -82,10 +82,15 @@ const Game = () => {
       {isLoading && (
         
         <div className="game">
+        
         <div className="switch">
-        <img src={decor1} alt="" style={{width:'1115px',  height:'755px'}}/>
+        
+        <img src={nintendo} alt="" style={{width:'1115px',  height:'755px'}}/>
         </div>
         <div className="decor-game">
+        <button className="attack-btn" onClick={() => attack()}>
+               
+              </button>
           <img src={decor} alt="" style={{width:'100%',  height:'100%', borderRadius:'12px'}}/>
         </div>
         <div className="game2">
@@ -97,9 +102,7 @@ const Game = () => {
                 <PlayerHuman {...playerHuman} />
               )}
 
-              {/* <button className="attack-btn" onClick={() => attack()}>
-                Attack
-              </button> */}
+              
             </div>
             {winner && (
               <>
@@ -117,7 +120,9 @@ const Game = () => {
           </div>
         </div>
         </div>
+        
       )}
+     
     </>
   );
 };

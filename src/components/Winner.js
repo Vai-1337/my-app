@@ -3,22 +3,18 @@ import { Link } from "react-router-dom";
 
 const Winner = (props) => {
 
-    const reload = () => {
-        window.location.reload()
-    }
+    // const reload = () => {
+    //     window.location.reload()
+    // }
 
   return (
     <>
       <div className="winner">
-        <h2 style={{ textAlign: "center", fontSize: "30px" }}>
-          The Winner
-          <br />
-          is :
-          <br />
-          <br />
+      <img alt="winner" src="https://fontmeme.com/permalink/230117/4b599efb23756753c97890eaea28a665.png"/>        
+                  
           <h1> {props.winner}</h1>
-        </h2>
-        <Link to="/pokedex"><button>New Game</button>        </Link>
+        
+        <Link to="/pokedex"><button className="btn-newgame">New Game</button></Link>
       </div>
     </>
   );
