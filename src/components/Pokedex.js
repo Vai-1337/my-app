@@ -34,6 +34,7 @@ const Main = () => {
   useEffect(() => {
     pokeFun();
   }, [url]);
+  
   return (
     <>
       <div className="container">
@@ -70,6 +71,7 @@ const Main = () => {
         </div>
         <div className="right-content">
           <Pokeinfo data={pokeDex} />
+          
         </div>
       </div>
     </>

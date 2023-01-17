@@ -1,12 +1,27 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
+import { useContext, useEffect } from "react";
+import { PokeContext } from "../context/PokeContext";
 
 const Card = ({ pokemon, loading, infoPokemon }) => {
+  const { value9 } = useContext(PokeContext);
+  const [stat2, setStat2] = value9;
+
+  
+
   const uniquePokemon = Array.from(new Set(pokemon.map((p) => p.id))).map(
     (id) => {
       return pokemon.find((p) => p.id === id);
     }
   );
+
+  const randomIndex = Math.floor(Math.random() * uniquePokemon.length);
+  const randomCPU = uniquePokemon[randomIndex];
+
+  useEffect(() => {
+    setStat2(randomCPU);
+  }, [randomCPU]);
+
   return (
     <>
       {loading ? (

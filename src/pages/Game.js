@@ -1,4 +1,3 @@
-
 import React, { useState, useContext } from "react";
 import { PokeContext } from "../context/PokeContext";
 import PlayerHuman from "../components/PlayerHuman";
@@ -6,28 +5,37 @@ import PlayerCpu from "../components/PlayerCpu";
 import Winner from "../components/Winner";
 import "../css/game.css";
 
-
 const Game = () => {
-  const { value, value2, value3 } = useContext(PokeContext);
+  const { value, value2, value3, value8, value9 } = useContext(PokeContext);
   const [data, setData] = value;
   const [isLoading, setIsLoading] = value2;
-  const [isActive, setActive] = value3
+  const [isActive, setActive] = value3;
+  const [stat, setStat] = value8;
+  const [stat2, setStat2] = value9;
+  console.log(stat);
 
   const [winner, setWinner] = useState("");
   const [playerSwitched, setPlayerSwitched] = useState(false);
 
   const [playerHuman, setPlayerHuman] = useState({
-    name: "Pikachu",
-    image: "https://pngimg.com/uploads/pokemon/pokemon_PNG9.png",
-    image2:
-      "http://vignette2.wikia.nocookie.net/pokemon/images/5/51/025Pikachu_AG_anime_3.png/revision/latest?cb=20150101100401",
-    hp: 300,
+    name: stat.name,
+    image: stat.sprites.back_default,
+    hp: stat.stats[0].base_stat,
+    attack: stat.stats[1].base_stat,
+    defense: stat.stats[2].base_stat,
+    specialAttack: stat.stats[3].base_stat,
+    specialDefense: stat.stats[4].base_stat,
+    speed: stat.stats[5].base_stat,
   });
   const [playerCpu, setPlayerCpu] = useState({
-    name: "Dracofeu",
-    image:
-      "https://www.pokepedia.fr/images/thumb/3/34/Dracaufeu-PDM1.png/1200px-Dracaufeu-PDM1.png",
-    hp: 300,
+    name: stat2.name,
+    image: stat2.sprites.front_default,
+    hp: stat2.stats[0].base_stat,
+    attack: stat2.stats[1].base_stat,
+    defense: stat2.stats[2].base_stat,
+    specialAttack: stat2.stats[3].base_stat,
+    specialDefense: stat2.stats[4].base_stat,
+    speed: stat2.stats[5].base_stat,
   });
 
   const attack = () => {
@@ -52,7 +60,7 @@ const Game = () => {
       let newHp = playerHuman.hp - damage;
 
       setTimeout(() => {
-      setActive(true)
+        setActive(true);
 
         setPlayerSwitched(playerSwitched);
       }, 3000);
@@ -61,8 +69,7 @@ const Game = () => {
       if (newHp <= 0) {
         setWinner(playerCpu.name);
       }
-      setActive(true)
-
+      setActive(true);
     }, 3000);
   };
 
@@ -102,6 +109,5 @@ const Game = () => {
     </>
   );
 };
-
 
 export default Game;

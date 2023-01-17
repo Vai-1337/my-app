@@ -12,6 +12,8 @@ export const PokeController = ({ children }) => {
   const [pokeDex, setPokeDex] = useState();
   const [nextUrl, setNextUrl] = useState();
   const [prevUrl, setPrevUrl] = useState();
+  const [stat, setStat] = useState();
+  const [stat2, setStat2] = useState();
 
   const pokeFetch = async () => {
     try {
@@ -40,6 +42,7 @@ export const PokeController = ({ children }) => {
     pokeFetch();
   }, [url]);
 
+
   return (
     <PokeContext.Provider
       value={{
@@ -51,6 +54,8 @@ export const PokeController = ({ children }) => {
         value5: [nextUrl, setNextUrl],
         value6: [prevUrl, setPrevUrl],
         value7: [url, setUrl],
+        value8: [stat, setStat],
+        value9: [stat2, setStat2]
       }}
     >
       {isLoading && children}

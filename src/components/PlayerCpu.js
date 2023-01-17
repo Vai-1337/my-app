@@ -10,8 +10,13 @@ const PlayerCpu = (props) => {
           alt="pokemon"
           style={{ width: "120px" }}
         />
-        <h1>{props.name}</h1>
-        <h1>{props.hp}</h1>
+       <h1>name: {props.name}</h1>
+        <p>hp: {props.hp}</p>
+        <p>attack:{props.attack}.</p>
+        <p>defense: {props.defense}</p>
+        <p>specialAttack: {props.specialAttack}</p>
+        <p>specialDefense: {props.specialDefense}</p>
+        <p>speed: {props.speed}</p>
       </div>
     </>
   );

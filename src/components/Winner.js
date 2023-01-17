@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Winner = (props) => {
 
@@ -17,7 +18,7 @@ const Winner = (props) => {
           <br />
           <h1> {props.winner}</h1>
         </h2>
-        <button onClick={() => reload()}>New Game</button>        
+        <Link to="/pokedex"><button>New Game</button>        </Link>
       </div>
     </>
   );
