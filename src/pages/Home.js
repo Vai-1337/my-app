@@ -5,7 +5,7 @@ import "../css/home.css";
 const Home = () => {
   return (
     <>
-      <div className="home">
+      <div>
         <Link to="/pokedex" className="pokedex">
           Pokedex
         </Link>

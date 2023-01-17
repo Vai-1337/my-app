@@ -50,7 +50,7 @@ const Game = () => {
 
     setTimeout(() => {
       counterAttack();
-      // setActive(true)
+      setActive(true)
     }, 2000);
   };
 

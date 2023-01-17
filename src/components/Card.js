@@ -1,5 +1,4 @@
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
 import { useContext, useEffect } from "react";
 import { PokeContext } from "../context/PokeContext";
 
@@ -22,41 +21,24 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
 
   return (
     <>
-      {loading ? (
+     {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <Carousel
-          className="caroussel"
-          style={{
-            width: "200px",
-            display: "flex",
-            justifyContent: "space-around",
-          }}
-        >
-          {uniquePokemon.map((item) => {
-            return (
-              <Carousel.Item key={item.id}>
-                <img
-                  style={{ width: "100px" }}
-                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${item.id}.svg`}
-                  alt=""
-                />
-                <Carousel.Caption>
-                  <h3>{item.name}</h3>
-                  <p>{item.id}</p>
-                  <p>
-                    <button
-                      className="buttoncaroussel"
-                      onClick={() => infoPokemon(item)}
-                    >
-                      Info
-                    </button>
-                  </p>
-                </Carousel.Caption>
-              </Carousel.Item>
-            );
-          })}
-        </Carousel>
+        uniquePokemon.map((item) => {
+          return (
+            <>
+              <div
+                className="card"
+                key={item.id}
+                onClick={() => infoPokemon(item)}
+              >
+                <h2># {item.id} </h2>
+                <img style={{width:"100px"}} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${item.id}.svg`} alt="" />
+                <h2>{item.name}</h2>
+              </div>
+            </>
+          );
+        })
       )}
     </>
   );

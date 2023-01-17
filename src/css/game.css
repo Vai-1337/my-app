@@ -1,37 +1,19 @@
-
-
 .game{
     width: 100%;
     background-color: rgb(153, 210, 156);
     overflow: hidden;
-
     display: flex;
     justify-content: center;
     align-items: center;    
     height: 1000px;
+    border:5px solid rgb(255, 0, 4);
 }
-
-.player{   
-    width:100%;
-    height: 50px;    
-    display: flex;
-    margin: 0 20px;
-    justify-content: space-between;
-}
-
 .active{
     color: red;
 }
-.player-cpu, .player-human{   
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;   
-}
-
 .blockFight{
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
 }
 .btn {
     width:150px;
@@ -52,22 +34,83 @@
     align-items: center;
     justify-content: center;
 }
-
 .player {
-    animation-name: move-lightly;
+    /* animation-name: move-lightly; */
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    display: flex!important;   
+    align-items: center!important;
+    justify-content: center!important;
+    margin:0px;
+    width: 100%!important;
+    height: 100%!important;  
+    border:5px solid yellow;
   }
-
-  @keyframes move-lightly {
+  /* @keyframes move-lightly {
     0% {
       transform: translate(3px, 3px);
     }
     100% {
       transform: translate(-3px, -3px);
     }
-  }
+  } */
+
+/* image + stats */
+.full-human{
+    border:5px solid rgb(85, 8, 86);
+}
+/* image */
+.human{     
+    border:5px solid rgb(34, 0, 255);
+    width: 100%!important;
+    height: 100%!important;;
+    width: 300px!important;
+    margin-top: 50px;
+}
+/* stats */
+.stats-human{
+    border:5px solid rgb(80, 64, 184);
+    margin-top: 100px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.attack-defence-human{
+    border:5px solid rgb(0, 149, 255);
+    display: flex;
+    
+}
+.attack-human{
+    border:5px solid rgb(215, 250, 124);
+}
+
+/* image + stats */
+.full-cpu{    
+    border:5px solid rgb(234, 99, 236);
+}
+/* image */
+.cpu{ 
+    border:5px solid rgb(0, 149, 255);
+    width: 100%!important;
+    height: 100%!important;    
+    width: 300px!important;
+    margin-bottom: 50px;
+}
+/* stats */
+.stats-cpu{
+    border:5px solid rgb(33, 116, 176);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.attack-defense-cpu{
+    border:5px solid rgb(0, 149, 255);
+    display: flex;
+}
+.attack-cpu{
+    border:5px solid rgb(215, 250, 124);
+}
 
 
 

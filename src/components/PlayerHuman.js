@@ -2,7 +2,7 @@ import React from "react";
 
 const PlayerHuman = (props) => {
   return (
-    <>
+    <><div className="full-human">
       <div className="human">
         <img
           className="playerGame"
@@ -10,13 +10,24 @@ const PlayerHuman = (props) => {
           alt="pokemon"
           style={{ width: "120px" }}
         />
-        <h1>name: {props.name}</h1>
+        </div>
+        <div className="stats-human">
+        <h1>{props.name}</h1>
         <p>hp: {props.hp}</p>
+        <div className="attack-defence-human">
+        <div className="attack-human">
         <p>attack:{props.attack}.</p>
-        <p>defense: {props.defense}</p>
         <p>specialAttack: {props.specialAttack}</p>
+        
+        </div>
+        <div className="defence-human">
+        <p>defense: {props.defense}</p>
         <p>specialDefense: {props.specialDefense}</p>
+        </div>
+        </div>
         <p>speed: {props.speed}</p>
+        
+      </div>
       </div>
     </>
   );

@@ -34,17 +34,16 @@ const Main = () => {
   useEffect(() => {
     pokeFun();
   }, [url]);
-  
+
   return (
     <>
       <div className="container">
-        
+        <div className="left-content">
           <Card
             pokemon={pokeData}
             loading={loading}
             infoPokemon={(poke) => setPokeDex(poke)}
           />
-<div className="left-content">
           <div className="btn-group">
             {prevUrl && (
               <button
@@ -71,7 +70,6 @@ const Main = () => {
         </div>
         <div className="right-content">
           <Pokeinfo data={pokeDex} />
-          
         </div>
       </div>
     </>

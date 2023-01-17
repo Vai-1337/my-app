@@ -17,9 +17,7 @@ const Pokeinfo = ({ data }) => {
 
   return (
     <>
-      {!data ? (
-        ""
-      ) : (
+      {!data ? ("") : (
         <>
           <h1>{data.name}</h1>
           <img
@@ -27,11 +25,11 @@ const Pokeinfo = ({ data }) => {
             alt=""
           />
           <div className="abilities">
-            {data.abilities.map((poke) => {
+            {data.types.map((poke) => {
               return (
                 <>
                   <div className="group">
-                    <h2>{poke.ability.name}</h2>
+                    <h2>{poke.type.name}</h2>
                   </div>
                 </>
               );
@@ -41,9 +39,9 @@ const Pokeinfo = ({ data }) => {
             {data.stats.map((poke) => {
               return (
                 <>
-                  <h3>
-                    {poke.stat.name}:{poke.base_stat}
-                  </h3>
+                  <p style={{lineHeight:"10px", fontSize:"17px"}}>
+                    {poke.stat.name} : {poke.base_stat}
+                  </p>
                 </>
               );
             })}
@@ -51,7 +49,7 @@ const Pokeinfo = ({ data }) => {
           <br />
 
           <Link to="/game">
-            <button style={{ width: "100px", height: "30px" }}>Game</button>
+          <button className="select">Select This Pokemon</button>
           </Link>
         </>
       )}
