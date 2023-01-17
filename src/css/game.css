@@ -60,7 +60,6 @@
 }
 /* image */
 .human {
-  /* border: 5px solid rgb(34, 0, 255); */
   margin-top: 150px;
   z-index: 2;
 }
@@ -111,7 +110,6 @@
 
 /* image + stats */
 .full-cpu {
-  /* position: absolute; */
   border: 5px solid rgb(234, 99, 236);
   width: 350px;
   height: 550px;
@@ -125,8 +123,7 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
   margin-top: 100px;
-  /* border: 5px solid rgb(0, 149, 255); */
-  z-index: 3;
+  z-index: 2;
 }
 @keyframes move-lightly-cpu {
   50% {
@@ -156,6 +153,8 @@
   flex-direction: column;
   align-items: center;
   width: 175px;
+  display: grid;
+  border: 1px solid black;
 }
 .defense-cpu {
   border: 5px solid rgb(215, 250, 124);
@@ -178,29 +177,30 @@
   margin-left: 739px;
   margin-top: 37px;
   opacity: 0.1;
+  border: none;
 }
 .attack-btn:hover {
   box-shadow: inset 0 0 20px rgb(186, 47, 22);
   opacity: 1;
 }
-.btn-left{
-    position: absolute;
-    width: 109px;
-    height: 101px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 20px;
-    background-color: transparent;
-    cursor: pointer;
-    z-index: 4;
-    margin-right: 450px!important;
-    margin-top: 340px;
-    opacity: 0.1;   
+.btn-left {
+  position: absolute;
+  width: 109px;
+  height: 101px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 4;
+  margin-right: 450px !important;
+  margin-top: 340px;
+  opacity: 0.1;
 }
 .btn-left {
-    box-shadow: inset 0 0 20px rgb(186, 47, 22);
-    opacity: 1;
-  }
+  box-shadow: inset 0 0 20px rgb(186, 47, 22);
+  opacity: 1;
+}
 
 /* img {
     animation: blink 1s linear infinite;
@@ -213,34 +213,48 @@
 } */
 
 .dead {
-    animation-name: spin;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
- 
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  
+
   z-index: 2;
-  }
+ 
+}
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(900deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(900deg);
+  }
 }
 .deadhuman {
-    margin-top: 150px;
-    animation-name: spin2;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    z-index: 2;
-    /* animation-name: example;
+  margin-top: 150px;
+  animation-name: spin2;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  z-index: 2;
+  /* animation-name: example;
     animation-duration: 4s; */
-  }
+}
 @keyframes spin2 {
-    100% { transform: rotate(970deg); }
-    0% { transform: rotate(0deg); }
-    from {left: 0px;}
-    to {left: 200px;}
+  100% {
+    transform: rotate(970deg);
+  }
+  0% {
+    transform: rotate(0deg);
+  }
+  from {
+    left: 0px;
+  }
+  to {
+    left: 200px;
+  }
 }
 /* @keyframes example {
     from {left: 0px;}
@@ -262,24 +276,63 @@
     opacity: 0.1;   
 } */
 .btn-newgame {
-    width: 120px;
-    height: 30px;
-    box-shadow: inset 0 0 20px rgb(186, 47, 22);
-    opacity: 1;
-    border: none;
-    border-radius: 10px;
-    z-index: 5;
+  width: 120px;
+  height: 30px;
+  box-shadow: inset 0 0 20px rgb(186, 47, 22);
+  opacity: 1;
+  border: none;
+  border-radius: 10px;
+  z-index: 5;
+}
+.btn-newgame:hover {
+  box-shadow: inset 20px 10px 10px 20px rgb(49, 171, 252);
+  /* opacity: 1; */
+}
+.blink {
+  animation: blinker 1s linear infinite;
+  animation-iteration-count: 2;
+  margin-top: 100px;
+  z-index: 2;
+}
+.blink2 {
+  animation: blinker 1s linear infinite;
+  animation-iteration-count: 2;
+  margin-top: 150px;
+  z-index: 2;
+}
+
+@keyframes blinker {
+  100% {opacity: 0;}
+   50%{opacity: 1;} 
+    0%{opacity: 0;}    
   }
-  .btn-newgame:hover {
-    box-shadow: inset 20px 10px 10px 20px rgb(49, 171, 252);
-    /* opacity: 1; */
-  }
-  .blink {
-    animation: blinker 1s linear infinite;
-  }
-  
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
-  }
+
+
+/* .hpBarStatic {
+  position: absolute;
+  width: 170px;
+  margin-top: 10px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgb(140, 143, 219);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.hpBar {
+  margin: auto;
+  height: "30px";
+  background-color: rgb(61, 246, 10);
+  border-radius: 10px;
+} */
+@keyframes example {
+  from {left: 0px;}
+  to {left: 200px;}
+}
+
+img {
+  animation-name: example;
+  animation-duration: 4s;
+}

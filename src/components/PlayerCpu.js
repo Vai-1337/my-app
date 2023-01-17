@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 
 const PlayerCpu = (props) => {
+  const [healthPointsCpu, setHealthPointsCpu] = useState(props.hp);
+
   return (
     <>
       <div className="full-cpu">
+     
         <div className={props.className}>
           <img
             className="playerGame"
@@ -11,6 +14,7 @@ const PlayerCpu = (props) => {
             alt="pokemon"
             style={{ width: "250px" }}
           />
+         
         </div>
       </div>
       <div className="stats-cpu">

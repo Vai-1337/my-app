@@ -32,9 +32,9 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
                 key={item.id}
                 onClick={() => infoPokemon(item)}
               >
-                <h2># {item.id} </h2>
-                <img style={{width:"100px"}} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${item.id}.svg`} alt="" />
-                <h2>{item.name}</h2>
+                <p style={{textAlign:"left"}}># {item.id} </p>
+                <img style={{width:"90px"}} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${item.id}.svg`} alt="" />
+                <p>{item.name}</p>
               </div>
             </>
           );

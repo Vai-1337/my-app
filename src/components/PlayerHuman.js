@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 
 const PlayerHuman = (props) => {
+  const [healthPoints, setHealthPoints] = useState(props.hp);
+
   return (
     <>
       <div className="full-human">
         <div className={props.className}>
+          
           <img
             className="playerGame"
             src={props.image}

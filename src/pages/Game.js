@@ -3,23 +3,26 @@ import { PokeContext } from "../context/PokeContext";
 import PlayerHuman from "../components/PlayerHuman";
 import PlayerCpu from "../components/PlayerCpu";
 import Winner from "../components/Winner";
-import "../css/game.css";
+import Loser from "../components/Loser";
+
 import decor from "../asset/decor.jpg";
 import nintendo from "../asset/nintendo.webp";
+
+import "../css/game.css";
 
 const Game = () => {
   const { value, value2, value3, value8, value9 } = useContext(PokeContext);
   const [data, setData] = value;
   const [isLoading, setIsLoading] = value2;
-  const [isActive, setActive] = value3;
   const [stat, setStat] = value8;
   const [stat2, setStat2] = value9;
   console.log(stat);
+
   const [className, setClassName] = useState("cpu");
   const [classNameHuman, setClassNameHuman] = useState("human");
-
-  const [winner, setWinner] = useState("");
-  const [playerSwitched, setPlayerSwitched] = useState(false);
+  const [winner, setWinner] = useState(false);
+  const [loser, setLoser] = useState(false);
+  const [blink, setBlink] = useState("blink");
 
   const [playerHuman, setPlayerHuman] = useState({
     name: stat.name,
@@ -43,91 +46,84 @@ const Game = () => {
   });
 
   const attack = () => {
-    let newHp = playerCpu.hp - playerHuman.attack;
+    let newHp = playerCpu.hp - playerHuman.attack + playerCpu.defense;
     setPlayerCpu({ ...playerCpu, hp: newHp });
     setTimeout(() => {
       if (newHp <= 0) {
-        setWinner(playerHuman.name);
-        setClassName("dead")
+        setClassName("dead");
+        setWinner(true);
       }
-      // setPlayerSwitched(!playerSwitched);
     });
-
     setTimeout(() => {
       counterAttack();
-      setActive(true)
     }, 2000);
   };
 
   const counterAttack = () => {
     setTimeout(() => {
-      let damage = 50;
-      let newHp = playerHuman.hp - playerCpu.attack;
-
-      // setTimeout(() => {
-      //   setActive(true);
-
-      //   setPlayerSwitched(playerSwitched);
-      // }, 3000);
-
+      let newHp = playerHuman.hp - playerCpu.attack + playerHuman.defense;
       setPlayerHuman({ ...playerHuman, hp: newHp });
+      setTimeout(() => {
+        setClassNameHuman("human")
+        ;
+      }, 2000);
+      setClassNameHuman("blink2")
+        ;
       if (newHp <= 0) {
-        setWinner(playerCpu.name);
-        setClassNameHuman("deadhuman")
+        setLoser(true);
+        setClassNameHuman("deadhuman");
       }
-      setActive(true);
     });
+  };
+
+  const handleClick = () => {
+    attack();
+    setTimeout(() => {
+      setClassName("cpu")
+      ;
+    }, 2000);
+    setClassName("blink")
+      ;
   };
 
   return (
     <>
-    
       {data.result}
       {isLoading && (
-        
         <div className="game">
-        
-        <div className="switch">
-        
-        <img src={nintendo} alt="" style={{width:'1115px',  height:'755px'}}/>
-        
-        </div>
-        <div className="decor-game">
-         
-        <button className="attack-btn" onClick={() => attack()}> </button>
-              
-          <img src={decor} alt="" style={{width:'100%',  height:'100%', borderRadius:'12px'}}/>
-        </div>
-        <div className="game2">
-          <div className="player">
-            <div className="blockFight">
-              {/* {playerSwitched ? ( */}
-                {/* <PlayerCpu {...playerCpu} className={className}/> */}
-              {/* ) : ( */}
-                <PlayerHuman {...playerHuman} className={classNameHuman} />
-              {/* )} */}
+          <div className="switch">
+            <img
+              src={nintendo}
+              alt="switch"
+              style={{ width: "1115px", height: "755px" }}
+            />
+          </div>
+          <div className="decor-game">
+            <button className="attack-btn" onClick={handleClick}>
+              {/* {{handleClick} && <PlayerCpu className={blink}/>} */}
+            </button>
 
-              
-            </div>
-            {winner && (
-              <>
-                <Winner winner={winner} />
-                <br />
-              </>
-            )}
-            <div>
-              {/* {playerSwitched ? ( */}
-                {/* <PlayerHuman {...playerHuman} /> */}
-              {/* ) : ( */}
+            <img
+              src={decor}
+              alt="decor"
+              style={{ width: "100%", height: "100%", borderRadius: "12px" }}
+            />
+          </div>
+          <div className="game2">
+            <div className="player">
+              <div className="blockFight">
+                <PlayerHuman {...playerHuman} className={classNameHuman} />
+              </div>
+              {winner && <Winner winner={winner} />}
+              {loser && <Loser loser={loser} />}
+
+              <div>
                 <PlayerCpu {...playerCpu} className={className} />
-              {/* )} */}
+              </div>
             </div>
           </div>
         </div>
-        </div>
-        
       )}
-     
     </>
   );
 };

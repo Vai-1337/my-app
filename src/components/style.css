@@ -24,26 +24,32 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Pokemon Solid', sans-serif;
-    margin:"0 auto" important;
+    margin-left: 0;
 
 }
 
 .left-content,.right-content{
     flex-basis: 50%;
 }
-.left-content{
+.left-content{;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
-    grid-gap:2rem;}
+    grid-gap:2rem;
+}
+    
 
 .card{
     width: 270px;
+    height: 100px;
     background-color: #176ed3;
     border-radius: 1rem;
     border: 3px solid black;
     box-shadow: 0 7px 7px rgba(0,0,0,0.6);
     padding: 0 1.5rem;
+    margin-left: 0;
+    margin-top: 15px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
@@ -55,7 +61,7 @@ body{
     transform: scale(1.1);
 }
 .right-content{
-    width: 38%;
+    width: 40%;
     text-align: center;
     color: black;
     position: fixed;
@@ -139,11 +145,12 @@ h2{
 
 .right{
 padding-top: 5%;
+padding-right: 35%;
 }
 
 .start{
-        margin-left: 44.5%;
-        margin-top: 3%;
+        margin-left: 46%;
+        margin-top: 13%;
         --glow-color: white;
         --glow-spread-color: white;
         --enhanced-glow-color: white;
