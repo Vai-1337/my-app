@@ -39,7 +39,7 @@ const Game = () => {
   });
 
   const attack = () => {
-    let newHp = playerCpu.hp - 50;
+    let newHp = playerCpu.hp - playerHuman.attack;
     setPlayerCpu({ ...playerCpu, hp: newHp });
     setTimeout(() => {
       if (newHp <= 0) {
