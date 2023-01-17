@@ -98,6 +98,7 @@
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  z-index: 5;
 }
 @keyframes move-lightly-human {
   100% {
@@ -238,6 +239,8 @@
 @keyframes spin2 {
     100% { transform: rotate(970deg); }
     0% { transform: rotate(0deg); }
+    from {left: 0px;}
+    to {left: 200px;}
 }
 /* @keyframes example {
     from {left: 0px;}
