@@ -17,6 +17,7 @@ body{
     flex-basis: 50%;
 }
 .left-content{
+    border: 1px solid white;
     /* display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
     grid-gap:2rem; */
