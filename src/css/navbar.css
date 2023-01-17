@@ -5,6 +5,7 @@
    
 }
 .navbar{
+    height: 100px;
     padding-right: 90px;
     background-color: black;
     display: flex;

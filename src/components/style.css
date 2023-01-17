@@ -114,9 +114,9 @@ h2{
 .select{
     font-size: 20px;
     width: 300px;
-    height: 60px;
+    height: 50px;
     padding: 5px;
-    margin-top: 15px;
+    margin-top: 5px;
     border-radius: 8px;
     background-color: #176ed3;
     color: rgb(245, 213, 33);
@@ -136,6 +136,62 @@ h2{
 .divGeneral{
     margin: 0% 0% 50%!important;
 }
+
+.right{
+padding-top: 5%;
+}
+
+.start{
+        margin-left: 44.5%;
+        margin-top: 12%;
+        --glow-color: white;
+        --glow-spread-color: white;
+        --enhanced-glow-color: white;
+        --btn-color: black ;
+        border: .25em solid var(--glow-color);
+        padding: 1em 3em;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        background-color: var(--btn-color);
+        border-radius: 1em;
+        outline: none;
+        box-shadow: 0 0 1em .25em var(--glow-color),
+               0 0 4em 1em var(--glow-spread-color),
+               inset 0 0 .75em .25em var(--glow-color);
+        text-shadow: 0 0 .5em var(--glow-color);
+        position: relative;
+        transition: all 0.3s;
+       }
+       
+.start::after {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        top: 120%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--glow-spread-color);
+        filter: blur(2em);
+        opacity: .7;
+        transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+       }
+       
+.start:hover {
+        color: black;
+        background-color: var(--glow-color);
+        box-shadow: 0 0 1em .25em var(--glow-color),
+               0 0 4em 2em var(--glow-spread-color),
+               inset 0 0 .75em .25em var(--glow-color);
+       }
+       
+.start:active {
+        box-shadow: 0 0 0.6em .25em var(--glow-color),
+               0 0 2.5em 2em var(--glow-spread-color),
+               inset 0 0 .5em .25em var(--glow-color);
+       }
+
 
 /* .buttoncaroussel{
     margin: auto;

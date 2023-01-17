@@ -18,7 +18,7 @@ const Pokeinfo = ({ data }) => {
   return (
     <>
       {!data ? ("") : (
-        <>
+        <div className="right">
           <h1>{data.name}</h1>
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`}
@@ -51,7 +51,7 @@ const Pokeinfo = ({ data }) => {
           <Link to="/game">
           <button className="select">Select This Pokemon</button>
           </Link>
-        </>
+        </div>
       )}
     </>
   );
