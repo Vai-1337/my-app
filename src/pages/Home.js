@@ -10,10 +10,7 @@ const Home = () => {
           Pokedex
         </Link>
       </div>
-      <div className="home">
-        <Link to="/game" className="pokedex">
-          Game
-        </Link>
+      <div className="home">       
       </div>
     </>
   );
