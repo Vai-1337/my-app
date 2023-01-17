@@ -97,7 +97,7 @@ const Game = () => {
                 <PlayerHuman {...playerHuman} />
               )}
 
-              {/* <button className="btn-primary" onClick={() => attack()}>
+              {/* <button className="attack-btn" onClick={() => attack()}>
                 Attack
               </button> */}
             </div>
