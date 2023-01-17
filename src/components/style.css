@@ -5,7 +5,7 @@
     font-family: 'Roboto', sans-serif;
 }
 body{
-    background-color: #FCEEC8;
+    background-color: #020202;
 }
 .container{
     width: 90%;
@@ -17,9 +17,10 @@ body{
     flex-basis: 50%;
 }
 .left-content{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
-    grid-gap:2rem;
+    grid-gap:2rem; */
+    color:black
 }
 .card{
     width: 300px;
@@ -33,9 +34,10 @@ body{
     box-sizing: border-box;
 }
 .right-content{
+    margin-top: 100px;
     width: 50%;
     text-align: center;
-    color: black;
+    color: rgb(255, 255, 255);
     position: fixed;
     top:100px;
     right: 10px;
@@ -83,3 +85,27 @@ body{
     background-color: #b74555;
     border-radius: 8px;
 }
+
+.buttoncaroussel{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;        
+    width: 50px;
+    background-color: #b74555;
+    color: white;
+    padding: 0.3rem 0;
+    border-radius: 10px;
+}
+
+.imgcaroussel{
+    width: 200px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* h3, p{
+    text-align: center;
+    margin-top: 1rem;
+    color: #b74555;
+} */

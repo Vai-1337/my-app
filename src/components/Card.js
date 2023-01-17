@@ -1,4 +1,6 @@
 import React from "react";
+import Carousel from 'react-bootstrap/Carousel';
+
 const Card = ({ pokemon, loading, infoPokemon }) => {
 
   const uniquePokemon = Array.from(new Set(pokemon.map(p => p.id))).map(id => {
@@ -10,21 +12,25 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        uniquePokemon.map((item) => {
-          return (
-            <>
-              <div
-                className="card"
-                key={item.id}
-                onClick={() => infoPokemon(item)}
-              >
-                <h2>{item.id} </h2>
-                <img src={item.sprites.front_default} alt="" />
-                <h2>{item.name}</h2>
-              </div>
-            </>
-          );
-        })
+        <Carousel className="caroussel">
+          {uniquePokemon.map((item) => {
+            return (
+              <Carousel.Item key={item.id}>
+                <img className="imgcaroussel"
+                  src={item.sprites.front_default}
+                  alt=""
+                />
+                <Carousel.Caption>
+                  <h3>{item.name}</h3>
+                  <p>{item.id}</p>
+                  <p>
+                    <button className="buttoncaroussel" onClick={() => infoPokemon(item)}>Info</button>
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            );
+          })}
+        </Carousel>
       )}
     </>
   );
