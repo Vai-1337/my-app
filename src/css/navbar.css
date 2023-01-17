@@ -5,9 +5,10 @@
    
 }
 .navbar{
+    padding-right: 90px;
     background-color: black;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .button{

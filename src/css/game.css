@@ -11,10 +11,10 @@
 .active{
     color: red;
 }
-.blockFight{
+/* .blockFight{
     display: flex;
     flex-direction: column;    
-}
+} */
 .btn {
     width:150px;
     height: 50px;
@@ -59,57 +59,87 @@
 /* image + stats */
 .full-human{
     border:5px solid rgb(85, 8, 86);
+    width: 350px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    margin:0;
 }
 /* image */
 .human{     
-    border:5px solid rgb(34, 0, 255);
-    width: 100%!important;
-    height: 100%!important;;
-    width: 300px!important;
+    border:5px solid rgb(34, 0, 255);    
     margin-top: 50px;
 }
 /* stats */
 .stats-human{
     border:5px solid rgb(80, 64, 184);
-    margin-top: 100px;
+    width: 350px;
     display:flex;
     flex-direction: column;
     align-items: center;
 }
 .attack-defence-human{
     border:5px solid rgb(0, 149, 255);
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     
 }
 .attack-human{
     border:5px solid rgb(215, 250, 124);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 175px;
+}
+.defense-human{
+    border:5px solid rgb(215, 250, 124);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 175px;
 }
 
 /* image + stats */
 .full-cpu{    
     border:5px solid rgb(234, 99, 236);
+    width: 350px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
 }
 /* image */
 .cpu{ 
-    border:5px solid rgb(0, 149, 255);
-    width: 100%!important;
-    height: 100%!important;    
-    width: 300px!important;
+    border:5px solid rgb(0, 149, 255);    
     margin-bottom: 50px;
 }
 /* stats */
 .stats-cpu{
-    border:5px solid rgb(33, 116, 176);
+    border:5px solid rgb(33, 176, 52);
+    width: 350px;
     display:flex;
     flex-direction: column;
     align-items: center;
 }
-.attack-defense-cpu{
+.attack-defense-cpu {
     border:5px solid rgb(0, 149, 255);
+    width: 100%;
     display: flex;
+    justify-content: space-between;
 }
 .attack-cpu{
     border:5px solid rgb(215, 250, 124);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 175px;
+}
+.defense-cpu{
+    border:5px solid rgb(215, 250, 124);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 175px;
 }
 
 

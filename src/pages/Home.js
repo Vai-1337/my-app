@@ -5,11 +5,11 @@ import "../css/home.css";
 const Home = () => {
   return (
     <>
-      <div>
+      {/* <div>
         <Link to="/pokedex" className="pokedex">
           Pokedex
         </Link>
-      </div>
+      </div> */}
       <div className="home">       
       </div>
     </>
