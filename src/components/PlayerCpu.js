@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const PlayerCpu = (props) => {
   
@@ -7,9 +7,7 @@ const PlayerCpu = (props) => {
   return (
     <>
       <div className="full-cpu">
-   
-      
-        <div className={props.className}>
+      <div className={props.className}>
           <img
             className="playerGame"
             src={props.image}

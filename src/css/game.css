@@ -1,44 +1,25 @@
-.decorciel{
+.decorciel {
   background-image: url("../asset/decor-ciel.png");
-    background-repeat: no-repeat;
-    /* background-size: contain; */
-    opacity: 1;
-    z-index: -1!important;   
+  background-repeat: no-repeat;
+  opacity: 1;
+  z-index: -1;
 }
-
-.sasha{
-  position:absolute;
-  z-index: 1; 
+.sasha {
+  position: absolute;
+  z-index: 1;
   width: 230px;
   margin-left: 1300px;
-  /* animation-name: example;
-  animation-duration: 4s; */
 }
-@keyframes example {
-  from {right: 0px;}
-  to {right:100px;}
-}
-.sasha2{
-  position:absolute;
-  z-index: 1; 
+.sasha2 {
+  position: absolute;
+  z-index: 1;
   margin-right: 1250px;
-  /* animation-name: example2;
-  animation-duration: 4s; */
   width: 200px;
 }
-@keyframes example2 {
-  from {left: 0px;}
-  to {left:150px;}
-}
-
-
-
-
-
 .game {
   position: "fixed";
   width: 100%;
- 
+
   z-index: 1;
   overflow: hidden;
   display: flex;
@@ -46,14 +27,13 @@
   align-items: center;
   height: 1000px;
 }
-.decorciel{
-  position:-webkit-sticky;
+.decorciel {
+  position: -webkit-sticky;
   z-index: -2;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 .winner {
   background-color: transparent;
   border-radius: 20px;
@@ -75,10 +55,8 @@
   justify-content: center;
   z-index: 3;
   margin: 0px;
-  /* border: 5px solid rgb(235, 235, 57); */
-} 
+}
 .decor-game {
-  /* border: 1px solid black; */
   height: 390px;
   width: 700px;
   margin-bottom: 400px;
@@ -96,7 +74,6 @@
   position: absolute;
 }
 .full-human {
-  /* border: 5px solid rgb(85, 8, 86); */
   width: 350px;
   height: 550px;
   display: flex;
@@ -140,7 +117,6 @@
   animation-direction: alternate;
   margin-top: 150px;
   z-index: 2;
-  /* z-index: 5; */
 }
 @keyframes move-lightly-human {
   100% {
@@ -153,7 +129,6 @@
 .human-stop {
   margin-top: 150px;
   z-index: 2;
-  /* z-index: 5; */
 }
 
 /* image + stats */
@@ -181,7 +156,6 @@
     transform: translate(-2px, -7px);
   }
 }
-/* stats */
 .stats-cpu {
   border: 5px solid rgb(33, 176, 52);
   width: 350px;
@@ -211,8 +185,7 @@
   align-items: center;
   width: 175px;
 }
-
-.attack-btn {  
+.attack-btn {
   position: absolute;
   width: 109px;
   height: 101px;
@@ -251,26 +224,14 @@
   opacity: 1;
 }
 
-/* img {
-    animation: blink 1s linear infinite;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-} */
-
 .dead {
   animation-name: spin;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-direction: alternate;
-  
 
   z-index: 2;
- 
 }
 @keyframes spin {
   0% {
@@ -288,8 +249,7 @@
   animation-iteration-count: 1;
   animation-direction: alternate;
   z-index: 2;
-  /* animation-name: example;
-    animation-duration: 4s; */
+  animation-duration: 4s; 
 }
 @keyframes spin2 {
   100% {
@@ -305,25 +265,7 @@
     left: 200px;
   }
 }
-/* @keyframes example {
-    from {left: 0px;}
-    to {left: 200px;}
-} */
 
-/* .btn-newgame{
-    position: absolute;
-    width: 109px;
-    height: 101px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 20px;
-    background-color: transparent;
-    cursor: pointer;
-    z-index: 4;
-    margin-right: 450px!important;
-    margin-top: 340px;
-    opacity: 0.1;   
-} */
 .btn-newgame {
   width: 120px;
   height: 40px;
@@ -351,11 +293,16 @@
 }
 
 @keyframes blinker {
-  100% {opacity: 0;}
-   50%{opacity: 1;} 
-    0%{opacity: 0;}    
+  100% {
+    opacity: 0;
   }
-
+  50% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
 
 .hpBarStatic-human {
   position: absolute;
@@ -399,10 +346,7 @@
   border-radius: 10px;
   z-index: 2;
 }
-
-
-
-.home-switch{
+.home-switch {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -414,19 +358,13 @@
   margin-bottom: 218px;
   opacity: 0.1;
   border: none;
- 
- 
 }
-/* .special-attaque:hover{
-  box-shadow: inset 0 0 20px rgb(186, 47, 22);
-  opacity: 1;
-} */
-.home-switch:hover{
+
+.home-switch:hover {
   background-color: black;
   opacity: 0.3;
-  
 }
-.special-attack{
+.special-attack {
   position: absolute;
   width: 109px;
   height: 101px;
@@ -441,40 +379,20 @@
   opacity: 0.1;
   border: none;
 }
-/* clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0% 100%);
-  background-color: #fff;
-  padding: 20px; */
-
-  @media screen and (max-width: 600px) {
-    /* Change the width of the .game class to be 100% of the screen */
-    .game {
-      width: 100%;
-    }
-    /* Change the margin-left of the .sasha class to be 5% of the screen */
-    .sasha {
-      margin-left: 5%;
-    }
-    /* Change the margin-right of the .sasha2 class to be 5% of the screen */
-    .sasha2 {
-      margin-right: 5%;
-    }
-    /* Change the width of the .winner class to be 80% of the screen */
-    .winner {
-      width: 80%;
-    }
-  }
-
-  .human-move{
-    animation-name: human-move;
-    animation-duration: 4s;
-    margin-top: 150px;
-    z-index: 4;
-  }
-  @keyframes human-move {
-    from {left: 0px;}
-    to {left: 200px;}
+.human-move {
+  animation-name: human-move;
+  animation-duration: 4s;
+  margin-top: 150px;
+  z-index: 4;
 }
-
+@keyframes human-move {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 200px;
+  }
+}
 .hp-bar {
   height: 20px;
   background-color: green;
