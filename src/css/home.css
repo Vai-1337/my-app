@@ -1,12 +1,65 @@
 .home {
-    background-image: url(https://www.xtrafondos.com/wallpapers/resized/pokemon-unite-8254.jpg?s=large);
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 20px;
-    margin: 0px;
-    height: 3000px;
-    width: 100vw;
-
+  background-image: url(https://www.xtrafondos.com/wallpapers/resized/pokemon-unite-8254.jpg?s=large);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 20px;
+  margin: 0px;
+  height: 3000px;
+  width: 100vw;
 }
-    
 
+.start3 {
+  position: absolute !important;
+
+  margin-top: 100px;
+  --glow-color: white;
+  --glow-spread-color: white;
+  --enhanced-glow-color: white;
+  --btn-color: black;
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 43%;
+}
+.start3::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.start3:hover {
+  color: black;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.start3:active {
+  box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 0.5em 0.25em var(--glow-color);
+}

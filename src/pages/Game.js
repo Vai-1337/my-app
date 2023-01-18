@@ -5,7 +5,7 @@ import PlayerHuman from "../components/PlayerHuman";
 import PlayerCpu from "../components/PlayerCpu";
 import Winner from "../components/Winner";
 import Loser from "../components/Loser";
-import decor from "../asset/decor.jpg";
+import decor from "../asset/decor2.png";
 import nintendo from "../asset/nintendo.webp";
 import sasha from "../asset/sasha.png";
 import sasha2 from "../asset/sasha2.png";
@@ -52,23 +52,21 @@ const Game = () => {
   const attack = () => {
     let newHp = playerCpu.hp - playerHuman.attack + playerCpu.defense;
     setPlayerCpu({ ...playerCpu, hp: newHp });
-    setClassNameHuman("human-move")
+    setPlayerHuman({ ...playerHuman, name: playerHuman.name });
+       
     setTimeout(() => {
+      counterAttack()}, 3000);
+    
+    setTimeout(() => {      
       if (newHp <= 0) {        //dead condition 
         setClassName("dead");
         setTimeout(() => {
         setWinner(true);
-        }, 2000);
+        }, 1000);
         
       }
     });
-    if (playerCpu > 100) { // special attack condition
-      let newHp = playerCpu.hp - playerHuman.specialAttack
-      setPlayerCpu({...playerCpu, hp: newHp})
-    }
-    setTimeout(() => {
-      counterAttack();
-    }, 3000);
+    
   };
 
   const counterAttack = () => {
@@ -76,12 +74,15 @@ const Game = () => {
       let newHp = playerHuman.hp - 1
       // playerCpu.attack + playerHuman.defense;
       setPlayerHuman({ ...playerHuman, hp: newHp });
+      setClassNameHuman("blink2")
       setTimeout(() => {
         setClassNameHuman("human")
-        ;
-      }, 1000);
-      setClassNameHuman("blink2")
-        ;
+      }, 1000)
+      
+      if (playerHuman > 100) {
+        let newHp = playerHuman.hp - playerCpu.specialAttack
+        setPlayerHuman({...playerHuman, hp: newHp})
+      }
       if (newHp <= 0) {
         setClassNameHuman("deadhuman");
         
@@ -89,16 +90,13 @@ const Game = () => {
           setLoser(true);
         }, 1000);
       }
-      if (playerHuman > 100) {
-        let newHp = playerHuman.hp - playerCpu.specialAttack
-        setPlayerHuman({...playerHuman, hp: newHp})
-      }
-    });
+    }, 1000);
   };
 
   const handleClick = () => {
-    attack();
     setTimeout(() => {
+    attack();
+    
       setClassName("cpu")
       ;
     }, 2000);

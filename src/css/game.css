@@ -103,11 +103,7 @@
   flex-direction: column;
   margin: 0;
 }
-/* image */
-.human {
-  margin-top: 150px;
-  z-index: 2;
-}
+
 /* stats */
 .stats-human {
   border: 5px solid rgb(90, 102, 58);
@@ -142,7 +138,9 @@
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  z-index: 5;
+  margin-top: 150px;
+  z-index: 2;
+  /* z-index: 5; */
 }
 @keyframes move-lightly-human {
   100% {
@@ -151,6 +149,11 @@
   0% {
     transform: translate(-5px, -5px);
   }
+}
+.human-stop {  
+  margin-top: 150px;
+  z-index: 2;
+  /* z-index: 5; */
 }
 
 /* image + stats */
@@ -440,6 +443,8 @@
   .human-move{
     animation-name: human-move;
     animation-duration: 4s;
+    margin-top: 150px;
+    z-index: 4;
   }
   @keyframes human-move {
     from {left: 0px;}

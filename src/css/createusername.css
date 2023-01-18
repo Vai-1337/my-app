@@ -1,0 +1,169 @@
+.create-account{
+  background-image:url("https://www.xtrafondos.com/wallpapers/resized/pokemon-unite-8254.jpg?s=large");
+  background-repeat: no-repeat;
+    background-size: contain;
+    padding: 20px;
+    margin: 0px;
+    height: 3000px;
+    width: 100vw;
+  color: rgb(0, 0, 0);
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+ align-items: center;  
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0;
+  }
+  
+  label {
+    margin: 1em 0;
+  }
+  
+  input[type="text"] {
+    padding: 0.5em;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }
+   input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 1em;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  .cancel{
+    background-color: #c21d1d;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 1em;
+    cursor: pointer;
+  }
+  .cancel:hover{
+    background-color: #9e2121;
+  }
+
+  .start4{  
+    position: absolute !important; 
+    margin-top: 120px; 
+    --glow-color: white;
+    --glow-spread-color: white;
+    --enhanced-glow-color: white;
+    --btn-color: rgb(112, 200, 68) ;
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+   }
+   .start4::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+   }
+   
+.start4:hover {
+    color: black;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 2em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+   }
+   
+.start4:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 2.5em 2em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+
+}
+
+.inputname{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+}
+.start5{  
+  position: absolute !important; 
+  margin-top: 120px; 
+  --glow-color: white;
+  --glow-spread-color: white;
+  --enhanced-glow-color: white;
+  --btn-color: rgb(112, 200, 68) ;
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 1em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+ } 
+ 
+.start5:hover {
+  color: black;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 2em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+ }
+ 
+.start5:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+         0 0 2.5em 2em var(--glow-spread-color),
+         inset 0 0 .5em .25em var(--glow-color);
+
+}
+
+form {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 500px;
+}

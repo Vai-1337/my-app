@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import healthPointsCpu from "../App";
 
 const PlayerCpu = (props) => {
   const [healthPointsCpu, setHealthPointsCpu] = useState(props.hp);
@@ -6,6 +7,14 @@ const PlayerCpu = (props) => {
   return (
     <>
       <div className="full-cpu">
+       {/*mon insertion*/}
+       <div className="hpBarStatic">
+            <h3 className="hpBar" style={{
+              width: `${healthPointsCpu}%`,
+            }}> {props.hp}
+          </h3>
+          </div>
+          {/*mon insertion*/}
      
         <div className={props.className}>
           <img
