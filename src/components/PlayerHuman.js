@@ -1,13 +1,27 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 const PlayerHuman = (props) => {
-  const [healthPoints, setHealthPoints] = useState(props.hp);
+  const [healthPointsHuman, setHealthPointsHuman] = useState(props.hp);
 
+  console.log(healthPointsHuman)
   return (
     <>
       <div className="full-human">
-        <div className={props.className}>
-          
+        
+        {/*mon insertion*/}
+        <div className="hpBarStatic-human">
+            <h3
+              className="hpBar-human"
+              style={{
+                width: `${healthPointsHuman}%`,
+              }}
+            >
+              {props.hp} 
+            </h3>
+          </div>
+              <div className={props.className}>
+
+          {/*mon insertion*/}
           <img
             className="playerGame"
             src={props.image}

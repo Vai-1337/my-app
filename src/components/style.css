@@ -13,7 +13,7 @@ body{
 }
 .container{
     width: 100% !important;
-    padding-top: 100px;
+    padding-top: 20px;
     display: flex;
     
     font-family: 'Pokemon Solid', sans-serif;
@@ -255,7 +255,7 @@ padding-right: 35%;
   
   /*Hovers*/
   .card2:hover {
-    transform: translate(-10px, -15px);
+    transform: translate(-0px, -15px);
     border-color: #5bc0eb;
   }
   
@@ -291,6 +291,13 @@ padding-right: 35%;
   .but:hover {
     background-color: #5bc0eb;
     transform: scale(1.1);
+  }
+
+  input{
+    /* position: absolute; */
+    width: 30%;
+    margin-left: 16.5%;
+    margin-top: 5%;
   }
   
   

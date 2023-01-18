@@ -1,21 +1,14 @@
-import React, {useState} from "react";
-import healthPointsCpu from "../App";
+import React, { useState } from "react";
 
 const PlayerCpu = (props) => {
-  const [healthPointsCpu, setHealthPointsCpu] = useState(props.hp);
+  
+   
 
   return (
     <>
       <div className="full-cpu">
-       {/*mon insertion*/}
-       <div className="hpBarStatic">
-            <h3 className="hpBar" style={{
-              width: `${healthPointsCpu}%`,
-            }}> {props.hp}
-          </h3>
-          </div>
-          {/*mon insertion*/}
-     
+   
+      
         <div className={props.className}>
           <img
             className="playerGame"
@@ -23,7 +16,6 @@ const PlayerCpu = (props) => {
             alt="pokemon"
             style={{ width: "250px" }}
           />
-         
         </div>
       </div>
       <div className="stats-cpu">
@@ -46,3 +38,21 @@ const PlayerCpu = (props) => {
 };
 
 export default PlayerCpu;
+
+
+
+// const [healthPointsCpu, setHealthPointsCpu] = useState(props.hp);
+
+//   {/*mon insertion*/}
+//   <div className="hpBarStatic-cpu">
+//   <h3
+//     className="hpBar-cpu"
+//     style={{
+//       width: `${healthPointsCpu}%`,
+//     }}
+//   >
+//     {" "}
+//     {props.hp}
+//   </h3>
+// </div>
+// {/*mon insertion*/}

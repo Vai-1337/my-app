@@ -18,6 +18,8 @@ const Game = () => {
   const { value, value2, value3, value8, value9 } = useContext(PokeContext);
   const [data, setData] = value;
   const [isLoading, setIsLoading] = value2;
+  const [isActive, setActive] = value3;
+
   const [stat, setStat] = value8;
   const [stat2, setStat2] = value9;
   console.log(stat);
@@ -50,34 +52,36 @@ const Game = () => {
   });
 
   const attack = () => {
-    let newHp = playerCpu.hp - playerHuman.attack + playerCpu.defense;
+    let newHp = playerCpu.hp - 50;
     setPlayerCpu({ ...playerCpu, hp: newHp });
-    setPlayerHuman({ ...playerHuman, name: playerHuman.name });
+    // setPlayerHuman({ ...playerHuman, name: playerHuman.name });
        
     setTimeout(() => {
-      counterAttack()}, 3000);
+      counterAttack()
+      setActive(true)
+    }, 0);
     
     setTimeout(() => {      
       if (newHp <= 0) {        //dead condition 
         setClassName("dead");
         setTimeout(() => {
         setWinner(true);
-        }, 1000);
-        
+        }, 0);        
       }
+      
     });
     
   };
 
   const counterAttack = () => {
     setTimeout(() => {
-      let newHp = playerHuman.hp - 1
+      let newHp = playerHuman.hp - 50
       // playerCpu.attack + playerHuman.defense;
       setPlayerHuman({ ...playerHuman, hp: newHp });
       setClassNameHuman("blink2")
       setTimeout(() => {
         setClassNameHuman("human")
-      }, 1000)
+      }, 0)
       
       if (playerHuman > 100) {
         let newHp = playerHuman.hp - playerCpu.specialAttack

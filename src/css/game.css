@@ -76,7 +76,7 @@
   z-index: 3;
   margin: 0px;
   /* border: 5px solid rgb(235, 235, 57); */
-}
+} 
 .decor-game {
   /* border: 1px solid black; */
   height: 390px;
@@ -357,7 +357,7 @@
   }
 
 
-/* .hpBarStatic {
+.hpBarStatic-human {
   position: absolute;
   width: 170px;
   margin-top: 10px;
@@ -368,14 +368,38 @@
   padding: 0;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 
-.hpBar {
+.hpBar-human {
+  margin: auto;
+  height: 20px;
+  background-color: rgb(61, 246, 10);
+  border-radius: 10px;
+  z-index: 2;
+}
+.hpBarStatic-cpu {
+  position: absolute;
+  width: 170px;
+  margin-top: 10px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgb(140, 143, 219);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.hpBar-cpu {
   margin: auto;
   height: "30px";
   background-color: rgb(61, 246, 10);
   border-radius: 10px;
-} */
+  z-index: 2;
+}
+
 
 
 .home-switch{
@@ -449,4 +473,10 @@
   @keyframes human-move {
     from {left: 0px;}
     to {left: 200px;}
+}
+
+.hp-bar {
+  height: 20px;
+  background-color: green;
+  z-index: 2;
 }

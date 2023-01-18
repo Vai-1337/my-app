@@ -13,6 +13,7 @@ const Main = () => {
   const [nextUrl, setNextUrl] = useState();
   const [prevUrl, setPrevUrl] = useState();
   const [pokeDex, setPokeDex] = useState();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const pokeFun = async () => {
     setLoading(true);
@@ -36,9 +37,28 @@ const Main = () => {
     pokeFun();
   }, [url]);
 
+  const handleSearch = () => {
+    const filteredPokemon = pokeData.filter(
+      (pokemon) =>
+        pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    return filteredPokemon;
+  };
+
+  useEffect(() => {
+    handleSearch();
+  }, [])
+
+  console.log(pokeData)
+
   return (
     <div className="pkdex">
-      <img style={{width:"600px", marginLeft:"35%", marginTop:"1%"}} src={choice} alt="choice"/>
+      <img style={{width:"600px", marginLeft:"35%", marginTop:"1%"}} src={choice} alt="choice"/><br></br>
+      <input
+      type="text"
+      placeholder="Search for a Pokemon"
+      onChange={(e) => setSearchTerm(e.target.value)}
+    />
       <div className="container">
         <div className="left-content">
           <Card
@@ -70,9 +90,9 @@ const Main = () => {
             )}
           </div>
         </div>
-        <div className="right-content">
+        {/* <div className="right-content">
           <Pokeinfo data={pokeDex} />
-        </div>
+        </div> */}
       </div>
     </div>
   );
