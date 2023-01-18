@@ -4,6 +4,7 @@ import Pokeinfo from "./Pokeinfo";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Game from "../pages/Game";
+import choice from "../asset/choice.jpeg"
 
 const Main = () => {
   const [pokeData, setPokeData] = useState([]);
@@ -37,6 +38,7 @@ const Main = () => {
 
   return (
     <div className="pkdex">
+      <img style={{width:"600px", marginLeft:"35%", marginTop:"1%"}} src={choice} alt="choice"/>
       <div className="container">
         <div className="left-content">
           <Card

@@ -9,6 +9,7 @@ import "./App.css";
 import Pokedex from "./components/Pokedex";
 import "./components/style.css";
 import CreateUsername from "./components/CreateUserName"
+import Footer from "./components/Footer"
 
 const App = () => {
   const [username, setUsername] = useState(localStorage.getItem('username') || '');
@@ -21,7 +22,7 @@ const App = () => {
   };
 
   return (
-    <div className="divGeneral">
+<>    <div className="divGeneral">
       <NavBar />
       <div>
       <h1 style={{position:'absolute'}}>Welcome, {username}!</h1>     
@@ -35,7 +36,10 @@ const App = () => {
         <Route path="/account" element={<CreateUserName onUsernameChange={onUsernameChange} />}/>
         <Route path="*" element={<h1>Error 404</h1>} />
       </Routes>
+      <Footer />
     </div>
+   
+    </>
   );
 };
 

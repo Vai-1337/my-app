@@ -19,23 +19,23 @@ body{
     font-family: 'Pokemon Solid', sans-serif;
 }
 .pkdex{
-    background-image:url("https://wallpapers.com/images/file/pokeballs-pokemon-4k-rsoj9edswmcle931.jpg");
+       /* background-image:url("https://t4.ftcdn.net/jpg/02/56/38/41/240_F_256384176_EUBIrjAWG73DEg4RSmKQNEJg2ANh7uSC.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    background-color: black;
     
 }
 
 .left-content,.right-content{
     flex-basis: 100%;
 }
-.left-content{;
+
+.left-content{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
     grid-gap:2rem;
-   
 }
     
-
 .card{
     width: 250px;
     height: 140px;
@@ -80,25 +80,30 @@ h2{
     padding-top: 10%;
 }
 .abilities{
-    width: 70%;
-    margin: auto;
+    width: 10%;
+    margin-left: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
 }
 .abilities .group{
+    height: 23px;
+    width: 100px;
+    padding:20%;
+    margin-left: 20%;
     background-color: #176ed3;
     color: white;
-    padding: 3px;
     font-size: 12px;
-    border-radius: 8px;
-    border : 1px solid black;
+    border : none;
     margin-left: 1rem;
 }
 .base-stat{
-    margin-top: 2rem;
-    color:white;
+    width: 200px;
+    margin-top: 20%;
+    margin-bottom: 0;
+    color:black;
+    text-align: center;
 }
 .btn-group{
     display: flex;
@@ -117,10 +122,9 @@ h2{
 }
 .select{
     font-size: 20px;
-    width: 300px;
-    height: 50px;
+    width: 200px;
+    height: 40px;
     padding: 5px;
-    margin-top: 5px;
     border-radius: 8px;
     background-color: #176ed3;
     color: rgb(245, 213, 33);
@@ -200,10 +204,100 @@ padding-right: 35%;
 .credits{
     height: 700px;
     background-image: url("https://images8.alphacoders.com/113/1138021.jpg");
-    background-size: conta;
+    background-size: contain;
     background-repeat: no-repeat;
 
 }
+
+.contain {
+    position: relative;
+    width: 190px;
+    height: 254px;
+  }
+  
+  .card2 {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    width: 250px;
+    height: 280px;
+    /* background: linear-gradient(120deg, #f96666 0%, #4490ec 100%); */
+    background: url("https://t4.ftcdn.net/jpg/02/56/38/41/240_F_256384176_EUBIrjAWG73DEg4RSmKQNEJg2ANh7uSC.jpg") ;
+    padding: 16px;
+    border: 5px solid black;
+    border-radius: 8px;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .card-hidden {
+    display: flex;
+    transform: translateY(200%);
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: transform .5s ease-in, opacity .3s ease-in;
+    opacity: 0;
+    position: absolute;
+    margin-right: 70%;
+    margin-top: 25%;
+  }
+  
+  .card-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border: 1px dashed #232323;
+    border-radius: 8px;
+    z-index: -1;
+  }
+  
+  /*Hovers*/
+  .card2:hover {
+    transform: translate(-10px, -15px);
+    border-color: #5bc0eb;
+  }
+  
+  .card2:hover .card-hidden {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .card2:hover .title {
+    transform: translateY(200%);
+  }
+  
+  /*Text*/
+  .title {
+    position: absolute;
+    bottom: 0.5rem;
+    transition: transform .25s ease-out;
+  }
+  
+  /*Button*/
+  .but{
+    height: 35px;
+    padding: 8px;
+    background-color: #53aed4;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 0;
+    margin-left: 30%;
+    margin-bottom: 20%;
+    border: none;
+  }
+  
+  .but:hover {
+    background-color: #5bc0eb;
+    transform: scale(1.1);
+  }
+  
+  
+  
+  
+  
+  
 
 
 /* .buttoncaroussel{
@@ -226,5 +320,8 @@ padding-right: 35%;
     height: 100%;
     border-radius: 10px;
 } */
+
+
+
 
 

@@ -150,7 +150,7 @@
     transform: translate(-5px, -5px);
   }
 }
-.human-stop {  
+.human-stop {
   margin-top: 150px;
   z-index: 2;
   /* z-index: 5; */
