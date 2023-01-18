@@ -54,6 +54,10 @@ const Game = () => {
         setWinner(true);
       }
     });
+    if (playerCpu > 100) {
+      let newHp = playerCpu.hp - playerHuman.specialAttack
+      setPlayerCpu({...playerCpu, hp: newHp})
+    }
     setTimeout(() => {
       counterAttack();
     }, 2000);
@@ -73,6 +77,10 @@ const Game = () => {
         setLoser(true);
         setClassNameHuman("deadhuman");
       }
+      if (playerHuman > 100) {
+        let newHp = playerHuman.hp - playerCpu.specialAttack
+        setPlayerHuman({...playerHuman, hp: newHp})
+      }
     });
   };
 
@@ -91,6 +99,7 @@ const Game = () => {
       {data.result}
       {isLoading && (
         <div className="game">
+          {playerHuman.hp < 100 && <button className="special-attaque">SPECIAL</button>}
           <div className="switch">
             <img
               src={nintendo}
@@ -102,7 +111,7 @@ const Game = () => {
             <button className="attack-btn" onClick={handleClick}>
               {/* {{handleClick} && <PlayerCpu className={blink}/>} */}
             </button>
-
+          
             <img
               src={decor}
               alt="decor"

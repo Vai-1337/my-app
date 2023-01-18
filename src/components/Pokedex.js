@@ -36,7 +36,7 @@ const Main = () => {
   }, [url]);
 
   return (
-    <>
+    <div className="pkdex">
       <div className="container">
         <div className="left-content">
           <Card
@@ -72,7 +72,7 @@ const Main = () => {
           <Pokeinfo data={pokeDex} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Main;
