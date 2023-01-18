@@ -1,12 +1,16 @@
 import React, { useState, useContext } from "react";
 import { PokeContext } from "../context/PokeContext";
+import { Link } from 'react-router-dom';
 import PlayerHuman from "../components/PlayerHuman";
 import PlayerCpu from "../components/PlayerCpu";
 import Winner from "../components/Winner";
 import Loser from "../components/Loser";
-
 import decor from "../asset/decor.jpg";
 import nintendo from "../asset/nintendo.webp";
+import sasha from "../asset/sasha.png";
+import sasha2 from "../asset/sasha2.png";
+import poke1 from "../asset/poke1.png";
+
 
 import "../css/game.css";
 
@@ -60,7 +64,7 @@ const Game = () => {
     }
     setTimeout(() => {
       counterAttack();
-    }, 2000);
+    }, 3000);
   };
 
   const counterAttack = () => {
@@ -96,10 +100,16 @@ const Game = () => {
 
   return (
     <>
+    
+    <div className="decorciel">
+    
       {data.result}
       {isLoading && (
         <div className="game">
-          {playerHuman.hp < 100 && <button className="special-attaque">SPECIAL</button>}
+        <img src={sasha} alt="sasha" className="sasha"/>
+        <img src={poke1} alt="sasha2" className="sasha2"/>
+          <Link to="/" className="home-switch"><button ></button></Link>
+          {/* {playerHuman.hp < 100 && <button className="special-attaque">SPECIAL</button>} */}
           <div className="switch">
             <img
               src={nintendo}
@@ -133,6 +143,7 @@ const Game = () => {
           </div>
         </div>
       )}
+      </div>
     </>
   );
 };
