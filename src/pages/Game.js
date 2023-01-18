@@ -52,13 +52,17 @@ const Game = () => {
   const attack = () => {
     let newHp = playerCpu.hp - playerHuman.attack + playerCpu.defense;
     setPlayerCpu({ ...playerCpu, hp: newHp });
+    setClassNameHuman("human-move")
     setTimeout(() => {
-      if (newHp <= 0) {
+      if (newHp <= 0) {        //dead condition 
         setClassName("dead");
+        setTimeout(() => {
         setWinner(true);
+        }, 2000);
+        
       }
     });
-    if (playerCpu > 100) {
+    if (playerCpu > 100) { // special attack condition
       let newHp = playerCpu.hp - playerHuman.specialAttack
       setPlayerCpu({...playerCpu, hp: newHp})
     }
@@ -69,17 +73,21 @@ const Game = () => {
 
   const counterAttack = () => {
     setTimeout(() => {
-      let newHp = playerHuman.hp - playerCpu.attack + playerHuman.defense;
+      let newHp = playerHuman.hp - 1
+      // playerCpu.attack + playerHuman.defense;
       setPlayerHuman({ ...playerHuman, hp: newHp });
       setTimeout(() => {
         setClassNameHuman("human")
         ;
-      }, 2000);
+      }, 1000);
       setClassNameHuman("blink2")
         ;
       if (newHp <= 0) {
-        setLoser(true);
         setClassNameHuman("deadhuman");
+        
+        setTimeout(() => {
+          setLoser(true);
+        }, 1000);
       }
       if (playerHuman > 100) {
         let newHp = playerHuman.hp - playerCpu.specialAttack
