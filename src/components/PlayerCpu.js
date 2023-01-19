@@ -4,10 +4,13 @@ import {useState, useEffect} from "react";
 const PlayerCpu = props => {
   const [healthPointsCpu, setHealthPointsCpu] = useState(props.hp);
   const [defensePointsCpu, setDefensePointsCpu] = useState(props.defense);
+  const [specialDefensePoints, setSpecialDefensePoints] = useState(false)
 
   useEffect(()=>{
     setHealthPointsCpu((props.hp/100)*100)
     setDefensePointsCpu((props.defense/100)*100)
+    const SpecialDefence = props.defense < 10 ? setSpecialDefensePoints(true) : ''
+
     console.log(props.hp)
     console.log(props.defense)
 
@@ -30,7 +33,12 @@ const PlayerCpu = props => {
             </p>
           </p>
         </p>
-
+        {/* {specialDefensePoints && 
+          <>
+            <bouton className='specialDefenseBoutonCpu' onClick={()=>setSpecialDefensePoints(false)}>Special defense </bouton>
+            <p className='specialDefenseBoutonConsigneCpu'>(active)</p>
+        </>
+        } */}
         <div className={props.className}>
           <img
             className="playerGame"

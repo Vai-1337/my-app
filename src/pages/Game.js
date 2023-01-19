@@ -49,6 +49,7 @@ const Game = () => {
 
   const handleClick = (e) => {
     attack(); 
+    if (playerCpu.hp > 0) {   
     setTimeout(() => {
       setClassNameHuman("human-move");
     });
@@ -57,24 +58,26 @@ const Game = () => {
     },1000); 
     setTimeout(() => {
       setClassNameHuman("human");
-    },3500);setTimeout(() => {
+    },3000);setTimeout(() => {
       setClassName("cpu");
-    },3000);              
-  };
+    },2500);              
+  }
+    
+};
   const attack = () => {
     let newDefense = playerCpu.defense - 100;
     setPlayerCpu({...playerCpu, defense: newDefense});
     setTimeout(() => {
-      if (playerCpu)
-      counterAttack();
+      if (playerCpu.hp > 0)
+      counterAttack();      
     },4000);
     if (newDefense <= 0) {
       setPlayerCpu({...playerCpu, defense: 0});
       if (playerCpu.defense <= 0) {
       let newHp = playerCpu.hp - 50;
       setPlayerCpu({...playerCpu, hp: newHp})
-      if (newHp <= 0) {
-        setPlayerCpu({...playerCpu, hp: 0});}        
+      if (newHp <= 0) {        
+        setPlayerCpu({...playerCpu, hp: 0});}      
       }
     }
     // if (newDefense <= 0) {
@@ -167,7 +170,7 @@ const Game = () => {
             </div>
 
             <div className="decor-game">
-              {!loser && (
+              {!loser && !winner && (
                 <button className="attack-btn" onClick={handleClick}></button>
               )}
 

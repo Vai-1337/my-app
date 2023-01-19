@@ -17,6 +17,58 @@
   letter-spacing: 2px;  
   padding-bottom: 30px;
 }
+
+.specialDefenseBouton{
+  font-family: "Pokemon Solid", sans-serif;
+  color: rgb(118, 14, 14);
+  letter-spacing: 2px;  
+  position: absolute;
+  margin-top: 155px;
+  margin-left: 70px;
+  font-size: 1.7em;
+  z-index: 2;
+  animation: blinker 0.8s linear infinite;
+  animation-iteration-count: 15;
+}
+.specialDefenseBoutonCpu{
+  font-family: "Pokemon Solid", sans-serif;
+  color: rgb(118, 14, 14);
+  letter-spacing: 2px;  
+  position: absolute;
+  margin-top: 173px;
+  margin-left: 58px;
+  font-size: 1.7em;
+  z-index: 2;
+  animation: blinker 0.8s linear infinite;
+  animation-iteration-count: 15;
+}
+
+.specialDefenseBoutonConsigneCpu{
+  font-family: "Pokemon Solid", sans-serif;
+  color: rgb(118, 14, 14);
+  letter-spacing: 2px;  
+  position: absolute;
+  margin-top: 222px;
+  margin-left: 135px;
+  font-size: 0.9em;
+  z-index: 2;
+  animation: blinker 0.8s linear infinite;
+  animation-iteration-count: 15;
+}
+.specialDefenseBoutonConsigne{
+  font-family: "Pokemon Solid", sans-serif;
+  color: rgb(118, 14, 14);
+  letter-spacing: 2px;  
+  position: absolute;
+  margin-top: 207px;
+  margin-left: 80px;
+  font-size: 0.9em;
+  z-index: 2;
+  animation: blinker 0.8s linear infinite;
+  animation-iteration-count: 15;
+}
+
+
 .decorfight:hover{
   transform-style: preserve-3d;
   transform: rotateX(5deg) rotateY(5deg);
@@ -127,7 +179,7 @@
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  margin-top: 320px;
+  margin-top: 280px;
   margin-left: 50px;
   z-index: 2;
 }
@@ -174,13 +226,13 @@
 .cpu-move {
   position: absolute;
   animation-name: cpu-move1;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   margin-top: 280px;
-  margin-left: 50px;
+  margin-left: 40px;
   z-index: 4;
 }
 @keyframes cpu-move1 {
-  from {right: 100px;}
+  from {right: 40px;}
   to {right: 420px;}
 }
 .stats-cpu {
@@ -315,7 +367,7 @@
 .blink-human {
   animation: blinker 0.3s linear infinite;
   animation-iteration-count: 6;
-  margin-top: 320px;
+  margin-top: 280px;
   margin-left: 50px;
   z-index: 2;
 }
