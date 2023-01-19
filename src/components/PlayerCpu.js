@@ -12,7 +12,7 @@ const PlayerCpu = (props) => {
             className="playerGame"
             src={props.image}
             alt="pokemon"
-            style={{ width: "250px" }}
+            style={{ width: "200px" }}
           />
         </div>
       </div>

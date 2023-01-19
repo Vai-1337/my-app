@@ -1,9 +1,9 @@
-import { createContext, useState, useEffect } from "react";
+import {createContext, useState, useEffect} from "react";
 import axios from "axios";
 
 export const PokeContext = createContext();
 
-export const PokeController = ({ children }) => {
+export const PokeController = ({children}) => {
   const [data, setData] = useState([]);
   const [data2, setData2] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -14,6 +14,9 @@ export const PokeController = ({ children }) => {
   const [prevUrl, setPrevUrl] = useState();
   const [stat, setStat] = useState();
   const [stat2, setStat2] = useState();
+
+  const [playerHumans, setPlayerHumans] = useState([]);
+  const [playerCPUs, setPlayerCPUs] = useState([]);
 
   const pokeFetch = async () => {
     try {
@@ -27,10 +30,10 @@ export const PokeController = ({ children }) => {
     }
   };
 
-  const pokeFetch2 = async (res) => {
-    res.map(async (item) => {
+  const pokeFetch2 = async res => {
+    res.map(async item => {
       const result = await axios.get(item.url);
-      setData2((e) => {
+      setData2(e => {
         e = [...e, result.data];
         e.sort((a, b) => (a.id > b.id ? 1 : -1));
         return e;
@@ -41,7 +44,6 @@ export const PokeController = ({ children }) => {
   useEffect(() => {
     pokeFetch();
   }, [url]);
-
 
   return (
     <PokeContext.Provider
@@ -55,7 +57,9 @@ export const PokeController = ({ children }) => {
         value6: [prevUrl, setPrevUrl],
         value7: [url, setUrl],
         value8: [stat, setStat],
-        value9: [stat2, setStat2]
+        value9: [stat2, setStat2],
+        playerHumans: [playerHumans, setPlayerHumans],
+        playerCPUs: [playerCPUs, setPlayerCPUs],
       }}
     >
       {isLoading && children}

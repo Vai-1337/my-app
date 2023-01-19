@@ -20,18 +20,18 @@ const PlayerHuman = (props) => {
             </h3>
           </div>
               <div className={props.className}>
-
           {/*mon insertion*/}
+          
           <img
             className="playerGame"
             src={props.image}
             alt="pokemon"
-            style={{ width: "250px" }}
+            style={{ width: "200px" }}
           />
         </div>
       </div>
       <div className="stats-human">
-        <h1>{props.name}</h1>
+        <h1 className="playernamecpu">{props.name}</h1>
         <p>hp: {props.hp}</p>
         <div className="attack-defence-human">
           <div className="attack-human">

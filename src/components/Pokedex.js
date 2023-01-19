@@ -14,6 +14,7 @@ const Main = () => {
   const [prevUrl, setPrevUrl] = useState();
   const [pokeDex, setPokeDex] = useState();
   const [searchTerm, setSearchTerm] = useState("");
+  
 
   const pokeFun = async () => {
     setLoading(true);
@@ -47,7 +48,8 @@ const Main = () => {
 
   useEffect(() => {
     handleSearch();
-  }, [])
+  }, [searchTerm,pokeData])
+
 
   console.log(pokeData)
 
@@ -62,7 +64,8 @@ const Main = () => {
       <div className="container">
         <div className="left-content">
           <Card
-            pokemon={pokeData}
+          pokemon={handleSearch()}
+            // pokemon={pokeData}
             loading={loading}
             infoPokemon={(poke) => setPokeDex(poke)}
           />
