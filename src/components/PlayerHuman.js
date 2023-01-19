@@ -3,12 +3,13 @@ import React, {useState, useEffect} from "react";
 const PlayerHuman = props => {
   const [healthPointsHuman, setHealthPointsHuman] = useState(props.hp);
   const [defensePoints, setdefensePoints] = useState(props.defense);
-  const [specialDefensePoints, setSpecialDefensePoints] = useState(false)
+  // const [specialDefensePoints, setSpecialDefensePoints] = useState(false)
+  // const [bouclier, setBouclier] = useState(false)
 
   useEffect(() => {
     setHealthPointsHuman((props.hp / 100) * 100);
     setdefensePoints((props.defense / 100) * 100);
-    const SpecialDefense = props.hp < 110 ? setSpecialDefensePoints(true) : ''
+    // const SpecialDefense = props.hp < 100 ? setSpecialDefensePoints(true) : ''
     console.log(props.hp);
   }, [props.hp, props.defense]);
 
@@ -28,13 +29,16 @@ const PlayerHuman = props => {
             </p>
           </p>
         </p>
-        {specialDefensePoints && 
+        {/* {specialDefensePoints && 
           <>
           <bouton className='specialDefenseBouton'>Special defense </bouton>
-          <p className='specialDefenseBoutonConsigne'>(press boutton in the left)</p>
-          <button className='bouton-left' onClick={()=>setSpecialDefensePoints(false)}>XX</button>
-          </>
+          <p className='specialDefenseBoutonConsigne'>(press "B")</p>
+          <button className='defense-btn' onClick={()=>{setSpecialDefensePoints(false);setBouclier(true)}}></button>
+           </>
         }
+        {bouclier &&  
+        <bouton className='bouclier'>.</bouton>
+        } */}
 
         <div className={props.className}>
           <img

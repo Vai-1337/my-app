@@ -44,8 +44,8 @@ const Card = ({ pokemon, loading}) => {
                       {item.types.map((poke) => {
                         return (
                           <>
-                            <div className="group">
-                              <p>{poke.type.name}</p>
+                            <div className={poke.type.name === 'normal' ? 'normal' : poke.type.name === 'fighting' ? 'fighting' : poke.type.name === 'flying' ? 'flying' : poke.type.name === 'poison' ? 'poison' : poke.type.name === 'ground' ? 'ground' : poke.type.name === 'rock' ? 'rock' : poke.type.name === 'bug' ? 'bug' : poke.type.name === 'ghost' ? 'ghost' : poke.type.name ==='steel' ? 'steel' : poke.type.name === 'fire' ? 'fire' : poke.type.name === 'water' ? 'water' : poke.type.name === 'grass' ? 'grass' : poke.type.name === 'electric' ? 'electric' : poke.type.name === 'psychic' ? 'psychic' : poke.type.name === 'ice' ? 'ice' : poke.type.name === 'dragon' ? 'dragon' : poke.type.name === 'fairy' ? 'fairy' : 'default'} >
+                              <p className="group">{poke.type.name}</p>
                             </div>
                           </>
                         );

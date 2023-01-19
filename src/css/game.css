@@ -23,12 +23,13 @@
   color: rgb(118, 14, 14);
   letter-spacing: 2px;  
   position: absolute;
-  margin-top: 155px;
-  margin-left: 70px;
+  margin-bottom: 630px;
+  margin-right: 400px;
   font-size: 1.7em;
   z-index: 2;
   animation: blinker 0.8s linear infinite;
   animation-iteration-count: 15;
+  z-index: 4;
 }
 .specialDefenseBoutonCpu{
   font-family: "Pokemon Solid", sans-serif;
@@ -48,8 +49,8 @@
   color: rgb(118, 14, 14);
   letter-spacing: 2px;  
   position: absolute;
-  margin-top: 222px;
-  margin-left: 135px;
+  margin-bottom: 630px;
+  margin-right: 400px;
   font-size: 0.9em;
   z-index: 2;
   animation: blinker 0.8s linear infinite;
@@ -60,10 +61,10 @@
   color: rgb(118, 14, 14);
   letter-spacing: 2px;  
   position: absolute;
-  margin-top: 207px;
-  margin-left: 80px;
+  margin-bottom: 550px;
+  margin-right: 400px;
   font-size: 0.9em;
-  z-index: 2;
+  z-index: 3;
   animation: blinker 0.8s linear infinite;
   animation-iteration-count: 15;
 }
@@ -127,6 +128,7 @@
   position: absolute;
   z-index: 2;
 }
+
 .switch { 
   position: "fixed";
   z-index: 1;
@@ -134,7 +136,7 @@
   margin-bottom: 400px;
   border-radius: 20px;
 }
-.switch:hover{
+.switch:hover {
   transform-style: preserve-3d;
   transform: rotateX(5deg) rotateY(5deg);
 }
@@ -265,22 +267,38 @@
 }
 .attack-btn {
   position: absolute;
-  width: 109px;
-  height: 101px;
-  border-radius: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
   font-weight: bold;
   font-size: 20px;
   background-color: transparent;
   cursor: pointer;
   z-index: 4;
-  margin-left: 739px;
-  margin-top: 37px;
+  margin-left: 805px;
+  margin-top: 62px;
   opacity: 0.1;
   border: none;
 }
-
 .attack-btn:hover {
   box-shadow: inset 0 0 20px rgb(186, 47, 22);
+  opacity: 1;
+}
+.defense-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 4;
+  margin-left:505px !important;
+  margin-top: 210px;
+  opacity: 0.1;
+  border: none;
+}
+.defense-btn:hover {
+  box-shadow: inset 0 0 20px rgb(30, 131, 238);
   opacity: 1;
 }
 .btn-left {
@@ -303,6 +321,7 @@
 }
 
 .dead {
+  margin-top: 300px;
   animation-name: spin;
   animation-duration: 2s;
   animation-fill-mode: forwards;
@@ -521,5 +540,15 @@
   opacity: 0;
   transition: opacity 500ms;
 }
-
+.bouclier{
+  position: absolute;
+  margin-bottom:250px;
+  margin-right: 480px;
+  width: 220px;
+  height: 200px;
+  border-radius: 100px; 
+  z-index: 3;
+  opacity: 0.4;
+  background-color: #0d6efd;
+}
 

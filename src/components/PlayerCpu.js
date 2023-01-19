@@ -4,15 +4,12 @@ import {useState, useEffect} from "react";
 const PlayerCpu = props => {
   const [healthPointsCpu, setHealthPointsCpu] = useState(props.hp);
   const [defensePointsCpu, setDefensePointsCpu] = useState(props.defense);
-  const [specialDefensePoints, setSpecialDefensePoints] = useState(false)
+  // const [specialDefensePoints, setSpecialDefensePoints] = useState(false)
 
   useEffect(()=>{
     setHealthPointsCpu((props.hp/100)*100)
     setDefensePointsCpu((props.defense/100)*100)
-    const SpecialDefence = props.defense < 10 ? setSpecialDefensePoints(true) : ''
-
-    console.log(props.hp)
-    console.log(props.defense)
+    // const SpecialDefence = props.defense < 10 ? setSpecialDefensePoints(true) : ''
 
   }, [props.hp, props.defense])
 

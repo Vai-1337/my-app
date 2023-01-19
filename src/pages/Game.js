@@ -17,6 +17,8 @@ const Game = () => {
   const [data] = value;
   const [isLoading, setIsLoading] = value2;
   const [showGame, setShowGame] = useState(false);
+  const [specialDefensePoints, setSpecialDefensePoints] = useState(false);
+  const [bouclier, setBouclier] = useState(false);
 
   const [stat] = value8;
   const [stat2] = value9;
@@ -47,108 +49,132 @@ const Game = () => {
     speed: stat2.stats[5].base_stat,
   });
 
-  const handleClick = (e) => {
-    attack(); 
-    if (playerCpu.hp > 0) {   
-    setTimeout(() => {
-      setClassNameHuman("human-move");
-    });
-    setTimeout(() => {
-      setClassName("blink-cpu");
-    },1000); 
-    setTimeout(() => {
-      setClassNameHuman("human");
-    },3000);setTimeout(() => {
-      setClassName("cpu");
-    },2500);              
-  }
-    
-};
-  const attack = () => {
-    let newDefense = playerCpu.defense - 100;
-    setPlayerCpu({...playerCpu, defense: newDefense});
-    setTimeout(() => {
-      if (playerCpu.hp > 0)
-      counterAttack();      
-    },4000);
-    if (newDefense <= 0) {
-      setPlayerCpu({...playerCpu, defense: 0});
-      if (playerCpu.defense <= 0) {
-      let newHp = playerCpu.hp - 50;
-      setPlayerCpu({...playerCpu, hp: newHp})
-      if (newHp <= 0) {        
-        setPlayerCpu({...playerCpu, hp: 0});}      
-      }
-    }
-    // if (newDefense <= 0) {
-    //setPlayerCpu({...playerCpu, hp: newHp, defense: newDefense});
-    //   let newHp = playerCpu.hp - 10;
-    //   if (newDefense <= 0) {
-    //     newDefense = 0;
-    //     counterAttack();
-    //   }
-    //   setPlayerCpu({...playerCpu, hp: newHp, defense: newDefense});
-    //   if (newHp > 0) {
-    //     setClassName("blink");
-    //     setTimeout(() => {
-    //       if (playerHuman.hp > 0) {
-    //         counterAttack();
-    //       }
-    //     }, 0);
-    //   }
-    //   setTimeout(() => {
-    //     if (newHp <= 0) {
-    //       setClassName("dead");
-    //       setTimeout(() => {
-    //         setWinner(true);
-    //       }, 1000);
-    //     }
-    //   });
-    // }
-  };
+  useEffect(() => {
+    const SpecialDefense =
+      playerHuman.hp < 100 ? setSpecialDefensePoints(true) : "";
+  }, [ playerHuman.hp]);
 
-  const counterAttack = () => {
-    // setTimeout(() => {
-      let newDefense = playerHuman.defense - 100;
+  const handleClick = () => {
+    attack();
+    if (playerCpu.hp > 0) {
+      setTimeout(() => {
+        setClassNameHuman("human-move");
+      });
+      setTimeout(() => {
+        setClassName("blink-cpu");
+      }, 500);
+      setTimeout(() => {
+        setClassNameHuman("human");
+      }, 2500);
+      setTimeout(() => {
+        setClassName("cpu");
+      }, 2500);
+    }  ;
+    
+  };
+  const attack = () => {   
+    let newDefense = playerCpu.defense - playerHuman.attack;  
+    setPlayerCpu({...playerCpu, defense: newDefense});
+    // setTimeout(() => {      
+      setTimeout(() => {
+        
+        counterAttack()
+      },3000) 
+
+      if (newDefense <= 0) {
+        setPlayerCpu({...playerCpu, defense: 0});
+        if (playerCpu.defense <= 0) {
+          let newHp = playerCpu.hp - playerHuman.attack;
+          setPlayerCpu({...playerCpu, hp: newHp});
+          if (newHp <= 0) {
+            setPlayerCpu({...playerCpu, hp: 0});
+          }
+        
+          // if (newHp <= 0) {
+          //   setClassNameHuman("dead");
+          //   setTimeout(() => {
+          //     setLoser(true);
+          //   }, 2000);
+          // }
+        }
+        
+      }
+      // if (playerCpu.hp > 0)
+      // counterAttack();      
+    // },3000);
+      // rajout else il contre attack pas
+    
+    // if (newDefense <= 0) {
+    //   setPlayerCpu({...playerCpu, defense: 0});
+    //   if (newDefense <= 0) {
+    //     let newHp = playerCpu.hp - playerHuman.attack;
+    //     setPlayerCpu({...playerCpu, hp: newHp});}
+          
+    //     if (playerCpu.hp <= 0) {
+    //       setPlayerCpu({...playerCpu, hp: playerHuman.hp});
+    //     }
+    //   }
+  //       if (newHp <= 0) {
+  //         setClassName("dead");
+  //         setTimeout(() => {
+  //           setWinner(true);
+  //         }, 2000);
+          
+  //       } 
+  //     }
+  //   }
+  };
+ 
+  const counterAttack = () => {  
+    
+    if (playerCpu.hp > 0) {
+    let newDefense = playerHuman.defense - playerCpu.attack;
     setPlayerHuman({...playerHuman, defense: newDefense});
-    setTimeout(() => {
-      setClassName("cpu-move");
-    });
-    setTimeout(() => {
+          setClassName("cpu-move");
+        setTimeout(() => {
       setClassNameHuman("blink-human");
-    },500); 
+    }, 500);
     setTimeout(() => {
       setClassName("cpu");
-    },3000);
+    }, 2500);
     setTimeout(() => {
       setClassNameHuman("human");
-    },3000);   
+    }, 2500); 
+    
     if (newDefense <= 0) {
       setPlayerHuman({...playerHuman, defense: 0});
       if (playerHuman.defense <= 0) {
-        let newHp = playerHuman.hp - 50;
-        setPlayerHuman({...playerHuman, hp: newHp})
+        let newHp = playerHuman.hp - playerCpu.attack;
+        setPlayerHuman({...playerHuman, hp: newHp});
         if (newHp <= 0) {
-          setPlayerHuman({...playerHuman, hp: 0});}        
+          setPlayerHuman({...playerHuman, hp: 0});
         }
-    }      
-    
-    // let newHp = playerHuman.hp - 20;
-      // if (newHp <= 0) {
-      //   newHp = 0;
-      // }
-
-    //   setPlayerHuman({...playerHuman, hp: newHp});
-    //   if (newHp <= 0) {
-    //     setClassNameHuman("deadhuman");
-    //     setTimeout(() => {
-    //       setLoser(true);
-    //     }, 100);//     playerHuman.hp = 0;    //   } else {
-    //     counterAttack(null);
-    //   }
-    // }, 4000
-    // );
+        if (newHp === 0) {
+          setClassNameHuman("dead");}
+        //   setTimeout(() => {
+        //     setLoser(true);
+        //   }, 2000);
+        // }
+      }
+      
+    }
+  }
   };
+  // let newHp = playerHuman.hp - 20;
+  // if (newHp <= 0) {
+  //   newHp = 0;
+  // }
+
+  //   setPlayerHuman({...playerHuman, hp: newHp});
+  //   if (newHp <= 0) {
+  //     setClassNameHuman("deadhuman");
+  //     setTimeout(() => {
+  //       setLoser(true);
+  //     }, 100);//     playerHuman.hp = 0;    //   } else {
+  //     counterAttack(null);
+  //   }
+  // }, 4000
+  // );
 
   return (
     <>
@@ -168,7 +194,16 @@ const Game = () => {
                 style={{width: "1115px", height: "755px"}}
               />
             </div>
-
+            {/* {specialDefensePoints && 
+          <>
+          <bouton className='specialDefenseBouton'>Special defense </bouton>
+          <p className='specialDefenseBoutonConsigne'>(press "B")</p>
+          <button className='defense-btn' onClick={()=>{setSpecialDefensePoints(false);setBouclier(true)}}></button>
+           </> */}
+            
+            {/* {bouclier &&  
+        <bouton className='bouclier'>.</bouton>
+        } */}
             <div className="decor-game">
               {!loser && !winner && (
                 <button className="attack-btn" onClick={handleClick}></button>

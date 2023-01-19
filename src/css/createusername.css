@@ -1,11 +1,11 @@
-.create-account{
-  background-image:url("https://www.xtrafondos.com/wallpapers/resized/pokemon-unite-8254.jpg?s=large");
+.create-account {
+  /* background-image: url("https://www.xtrafondos.com/wallpapers/resized/pokemon-unite-8254.jpg?s=large");
   background-repeat: no-repeat;
-    background-size: contain;
-    padding: 20px;
-    margin: 0px;
-    height: 3000px;
-    width: 100vw;
+  background-size: 100%;
+  padding: 20px;
+  margin: 0px;
+  height: 1000px;
+  width: 1000px;
   color: rgb(0, 0, 0);
   padding: 0.5em 1em;
   border: none;
@@ -14,121 +14,74 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
- align-items: center;  
+  align-items: center; */
+  background-image: url("https://www.xtrafondos.com/wallpapers/resized/pokemon-unite-8254.jpg?s=large");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 20px;
+  margin: 0px;
+  height: 100vh;
 }
-
-
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 2em 0;
-  }
-  
-  label {
-    margin: 1em 0;
-  }
-  
-  input[type="text"] {
-    padding: 0.5em;
-    font-size: 1.2em;
-    border-radius: 5px;
-    border: 1px solid gray;
-  }
-   input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    margin-top: 1em;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #3e8e41;
-  }
-  .cancel{
-    background-color: #c21d1d;
-    color: white;
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    margin-top: 1em;
-    cursor: pointer;
-  }
-  .cancel:hover{
-    background-color: #9e2121;
-  }
-
-  .start4{  
-    position: absolute !important; 
-    margin-top: 120px; 
-    --glow-color: white;
-    --glow-spread-color: white;
-    --enhanced-glow-color: white;
-    --btn-color: rgb(112, 200, 68) ;
-    border: .25em solid var(--glow-color);
-    padding: 1em 3em;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    background-color: var(--btn-color);
-    border-radius: 1em;
-    outline: none;
-    box-shadow: 0 0 1em .25em var(--glow-color),
-           0 0 4em 1em var(--glow-spread-color),
-           inset 0 0 .75em .25em var(--glow-color);
-    text-shadow: 0 0 .5em var(--glow-color);
-    position: relative;
-    transition: all 0.3s;
-   }
-   .start4::after {
-    pointer-events: none;
-    content: "";
-    position: absolute;
-    top: 120%;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--glow-spread-color);
-    filter: blur(2em);
-    opacity: .7;
-    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
-   }
-   
-.start4:hover {
-    color: black;
-    background-color: var(--glow-color);
-    box-shadow: 0 0 1em .25em var(--glow-color),
-           0 0 4em 2em var(--glow-spread-color),
-           inset 0 0 .75em .25em var(--glow-color);
-   }
-   
-.start4:active {
-    box-shadow: 0 0 0.6em .25em var(--glow-color),
-           0 0 2.5em 2em var(--glow-spread-color),
-           inset 0 0 .5em .25em var(--glow-color);
-
-}
-
-.inputname{
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 30px;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  right: 27.5%;
+  top: 40%;
 }
-.start5{  
-  position: absolute !important; 
-  margin-top: 120px; 
+
+.inpUser{
+  position: absolute;
+  height: 60px;
+  padding: 0.5em;
+  font-size: 1.5em;
+  border-radius: 5px;
+  border: 1px solid gray;
+  right : 12%;
+}
+
+.inpUser2{
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  right : 12%;
+  margin-top: 6%;
+  margin-right: 5%;
+  cursor: pointer;
+  width: 200px;
+}
+
+.inpUser2:hover {
+  background-color: #3e8e41;
+}
+.cancel {
+  background-color: #c21d1d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-left : 56%;
+  margin-top: 10.5%;
+  position: absolute;
+}
+.cancel:hover {
+  background-color: #9e2121;
+}
+
+.start4 {
+  margin-left: 46%;
+  margin-top: 3%;
   --glow-color: white;
   --glow-spread-color: white;
   --enhanced-glow-color: white;
-  --btn-color: rgb(112, 200, 68) ;
+  --btn-color: black ;
   border: .25em solid var(--glow-color);
   padding: 1em 3em;
   color: white;
@@ -143,27 +96,75 @@ form {
   text-shadow: 0 0 .5em var(--glow-color);
   position: relative;
   transition: all 0.3s;
- } 
- 
+}
+.start4::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.start4:hover {
+  color: black;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.start4:active {
+  box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 0.5em 0.25em var(--glow-color);
+}
+.inputname {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+}
+.start5 {
+  margin-left: 46%;
+  margin-top: 12%;
+  --glow-color: white;
+  --glow-spread-color: white;
+  --enhanced-glow-color: white;
+  --btn-color: black ;
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 1em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+}
+
 .start5:hover {
   color: black;
   background-color: var(--glow-color);
-  box-shadow: 0 0 1em .25em var(--glow-color),
-         0 0 4em 2em var(--glow-spread-color),
-         inset 0 0 .75em .25em var(--glow-color);
- }
- 
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
 .start5:active {
-  box-shadow: 0 0 0.6em .25em var(--glow-color),
-         0 0 2.5em 2em var(--glow-spread-color),
-         inset 0 0 .5em .25em var(--glow-color);
-
+  box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 0.5em 0.25em var(--glow-color);
 }
 
-form {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 500px;
-}
+

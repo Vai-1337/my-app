@@ -11,7 +11,7 @@ const NavBar = () => {
       <Link style={{textDecoration:"none"}} to='/'><button className='button'><span>Home</span></button></Link>
       <Link style={{textDecoration:"none"}} to='/pokedex'><button className='button'><span>Pokedex</span></button></Link>
       <Link style={{textDecoration:"none"}} to='/credits'><button className='button'><span>Credits</span></button></Link>
-      <img style={{width:"150px"}} src="https://www.pixelstalk.net/wp-content/uploads/images1/Best-Pokemon-Go-Wallpapers-Image-1920x1080.png" alt=""/>
+      <img style={{width:"150px", marginRight:'-4%'}} src="https://www.pixelstalk.net/wp-content/uploads/images1/Best-Pokemon-Go-Wallpapers-Image-1920x1080.png" alt=""/>
     </div>
     </>
   )
