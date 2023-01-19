@@ -102,8 +102,6 @@ const Game = () => {
     }, 1000);
   };
 
-
-
   const handleClick = () => {
     setTimeout(() => {
       attack();

@@ -1,24 +1,39 @@
 import React from "react";
+import {useState, useEffect} from "react";
 
-const PlayerCpu = (props) => {
-  
-   
+const PlayerCpu = props => {
+  const [healthPointsCpu, setHealthPointsCpu] = useState(props.hp);
+  // useEffect(()=>{
+  //   setHealthPointsCpu((props.hp/100)*100)
+  //   console.log(props.hp)
+  // },[props.hp])
 
   return (
     <>
       <div className="full-cpu">
-      <div className={props.className}>
+        <p className="hpbar-fixedcpu">
+          <p
+            className="hpBar-cpu"
+            style={{
+              width: `${healthPointsCpu}%`,
+            }}
+          ><p className="numberhp">
+            {props.hp}
+            </p>
+          </p>
+        </p>
+
+        <div className={props.className}>
           <img
             className="playerGame"
             src={props.image}
             alt="pokemon"
-            style={{ width: "200px" }}
+            style={{width: "200px"}}
           />
         </div>
       </div>
       <div className="stats-cpu">
-      <h1 className="playernamecpu">{props.name}</h1>
-        <p>hp: {props.hp}</p>
+        <h1 className="playernamecpu">{props.name}</h1>
         <div className="attack-defense-cpu">
           <div className="attack-cpu">
             <p>attack:{props.attack}.</p>
@@ -36,8 +51,6 @@ const PlayerCpu = (props) => {
 };
 
 export default PlayerCpu;
-
-
 
 // const [healthPointsCpu, setHealthPointsCpu] = useState(props.hp);
 

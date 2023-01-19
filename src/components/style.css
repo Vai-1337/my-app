@@ -9,13 +9,11 @@
 body{    
     margin: 0;
     padding: 0;
-    
 }
 .container{
     width: 100% !important;
-    padding-top: 20px;
+    padding-top: 100px;
     display: flex;
-    
     font-family: 'Pokemon Solid', sans-serif;
 }
 .pkdex{
@@ -23,7 +21,6 @@ body{
     background-size: cover;
     background-repeat: no-repeat; */
     background-color: black;
-    
 }
 
 .left-content,.right-content{
@@ -34,8 +31,8 @@ body{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
     grid-gap:2rem;
+    margin-top: -3%;
 }
-    
 .card{
     width: 250px;
     height: 140px;
@@ -53,7 +50,8 @@ body{
     justify-content: space-between;
     box-sizing: border-box;
     font-family: 'Pokemon Solid', sans-serif;
-    color: rgb(245, 213, 33);    
+    color: rgb(245, 213, 33);   
+    cursor: pointer; 
 }
 .card:hover{
     transform: scale(1.1);
@@ -136,9 +134,7 @@ h2{
 
 .testtest{
     margin-right: 0 !important;
-    margin-left: 0 !important;
-    
-    
+    margin-left: 0 !important; 
 }
 
 .divGeneral{
@@ -202,9 +198,9 @@ padding-right: 35%;
        }
 
 .credits{
-    height: 700px;
+    height: 1200px;
     background-image: url("https://images8.alphacoders.com/113/1138021.jpg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 
 }
@@ -292,18 +288,49 @@ padding-right: 35%;
     background-color: #5bc0eb;
     transform: scale(1.1);
   }
-
+  
   input{
-    /* position: absolute; */
-    width: 30%;
+    position: absolute;
     margin-left: 16.5%;
-    margin-top: 5%;
-  }
+    margin-top: -1.5%;
+    width: 20%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #3c3a3a;
+    color: rgb(245, 213, 33);
+    font-weight: bolder;
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.checkBox{
+    margin-top: 2%;
+    margin-bottom: -2%;
+    display: flex;
+    margin-left: 15%;
+    color:white
+}
   
   
-  
-  
-  
+.playerVS{
+    position: absolute;
+    right: 45%;
+}
+
+.welcome{
+    position: absolute;
+    display: flex;
+    justify-self: center;
+    align-items: center;    
+    color: rgb(255, 255, 41);
+    background-color: #176ed3;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Pokemon Solid', sans-serif;
+}
   
 
 

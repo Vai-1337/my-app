@@ -1,11 +1,10 @@
 import React, {useState, useContext, useEffect} from "react";
-import {PokeContext} from "../context/PokeContext";
+import {PokeContext} from "../../context/PokeContext";
 import {Link} from "react-router-dom";
-import { CSSTransition } from 'react-transition-group';
-import PlayerHuman from "../components/PlayerHuman";
-import PlayerCpu from "../components/PlayerCpu";
-import Winner from "../components/Winner";
-import Loser from "../components/Loser";
+import PlayerHuman from "../PlayerHuman";
+import PlayerCpu from "../PlayerCpu";
+import Winner from "../Winner";
+import Loser from "../Loser";
 import decor from "../asset/decor2.png";
 import nintendo from "../asset/nintendo.webp";
 import sasha from "../asset/sasha.png";
@@ -30,7 +29,7 @@ const Game = () => {
   const [loser, setLoser] = useState(false);
 
   const {playerHumans, playerCPUs} = useContext(PokeContext);
-  const [showGame, setShowGame] = useState(false);  
+  const [showGame, setShowGame] = useState(false);
 
   const [playerHuman, setPlayerHuman] = useState({
     name: stat.name,
@@ -55,69 +54,13 @@ const Game = () => {
 
   useEffect(() => {
     setTimeout(() => {
-        setShowGame(true);
+      setShowGame(true);
     }, 2000);
-}, []);
+  }, []);
 
-if (!showGame) {
-    return (
-        <div className="loading-animation">
-            Loading...
-        </div>
-    );
-}
-
-  const attack = () => {
-    setCurrentAttacker(playerHuman.name);
-    setTimeout(() => {
-      setCurrentAttacker(null);
-    }, 2000);
-    let newHp = playerCpu.hp - 0;
-    if (newHp <= 0) {
-      newHp = 0;
-    }
-    setPlayerCpu({...playerCpu, hp: newHp});
-    if (newHp > 0) {
-      setTimeout(() => {
-        if (playerHuman.hp > 0) {
-          counterAttack();
-        }
-      }, 0);
-    }
-    setTimeout(() => {
-      if (newHp <= 0) {
-        setClassName("dead");
-        setTimeout(() => {
-          setWinner(true);
-        }, 1000);
-      }
-    });
-  };
-
-  const counterAttack = () => {
-    setCurrentAttacker(playerCpu.name);
-    setTimeout(() => {
-      setCurrentAttacker(null);
-    }, 2000);
-    setTimeout(() => {
-      let newHp = playerHuman.hp - 40;
-      if (newHp <= 0) {
-        newHp = 0;
-      }
-      setPlayerHuman({...playerHuman, hp: newHp});
-      if (newHp <= 0) {
-        setTimeout(() => {
-          setClassNameHuman("deadhuman");
-        }, 2000);
-        // setTimeout(() => {
-        // setLoser(true);
-        // },2000);
-      } else {
-        playerHuman.hp = 0;
-        counterAttack(null);
-      }
-    }, 1000);
-  };
+  if (!showGame) {
+    return <div className="loading-animation">Loading...</div>;
+  }
 
   const handleClick = () => {
     setTimeout(() => {
@@ -128,17 +71,62 @@ if (!showGame) {
       setClassName("blink");
     }, 1000);
   };
+  console.log(handleClick)
+  const attack = () => {
+    // let newHp = playerCpu.hp + 30;
+    // if (newHp <= 0) {
+    //   newHp = 0;
+    // }
+    setPlayerCpu({...playerCpu, hp: newHp});
+    // if (newHp > 0) {
+    //   setTimeout(() => {
+    //     if (playerHuman.hp > 0) {
+    //       counterAttack();
+    //     }
+    //   }, 0);
+    // }
+    // setTimeout(() => {
+    //   if (newHp <= 0) {
+    //     setClassName("dead");
+    //     setTimeout(() => {
+    //       setWinner(true);
+    //     }, 1000);
+    //   }
+    // });
+  };
+  
 
+  const counterAttack = () => {
+    setCurrentAttacker(playerCpu.name);
+    setTimeout(() => {
+      setCurrentAttacker(null);
+    }, 2000);
+    setTimeout(() => {
+      let newHp = playerHuman.hp + 30;
+      if (newHp <= 0) {
+        newHp = 0;
+      }
+      setPlayerHuman({...playerHuman, hp: newHp}); // playerHuman.hp = newHp
+      if (newHp <= 0) {
+        setTimeout(() => {
+          setClassNameHuman("deadhuman");
+        }, 2000);
+      } else {
+        playerHuman.hp = 0;
+        counterAttack(null);
+      }
+    }, 1000);
+  };
+
+  
   return (
-    <>     
-      <div className="decorciel">
-    
-      {(e)=>e.preventDefault()}
+    <>
+      <div className="decorciel">        
         {data.result}
-        {isLoading && ( 
+        {isLoading && (
           <div className="game">
             <img src={sasha} alt="sasha" className="sasha" />
-            
+
             <img src={poke1} alt="sasha2" className="sasha2" />
             <Link to="/" className="home-switch">
               <button></button>
@@ -150,14 +138,13 @@ if (!showGame) {
                 style={{width: "1115px", height: "755px"}}
               />
             </div>
-            
 
             <div className="decor-game">
               {!loser && (
-                <button className="attack-btn" onClick={handleClick}></button>
+                <button className="attack-btn" onClick={handleClick()}></button>
               )}
-
               <img
+                className="decorfight"
                 src={decor}
                 alt="decor"
                 style={{width: "100%", height: "100%", borderRadius: "12px"}}

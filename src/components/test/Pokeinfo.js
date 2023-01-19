@@ -1,8 +1,8 @@
 import React from "react";
-import Game from "../pages/Game";
+import Game from "../../pages/Game";
 import { Link } from "react-router-dom";
 import { useContext, useEffect } from "react";
-import { PokeContext } from "../context/PokeContext";
+import { PokeContext } from "../../context/PokeContext";
 
 const Pokeinfo = ({ data }) => {
   const { value8, value9 } = useContext(PokeContext);

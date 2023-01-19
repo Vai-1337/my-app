@@ -1,28 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const PlayerHuman = (props) => {
   const [healthPointsHuman, setHealthPointsHuman] = useState(props.hp);
+  // useEffect(()=>{
+  //   setHealthPointsHuman((props.hp/100)*100)
+  //   console.log(props.hp)
+  // },[props.hp])
 
-  console.log(healthPointsHuman)
   return (
     <>
       <div className="full-human">
-        
-        {/*mon insertion*/}
-        <div className="hpBarStatic-human">
-            <h3
+        <p className="hpbar-fixed">
+            <p
               className="hpBar-human"
               style={{
                 width: `${healthPointsHuman}%`,
               }}
-            >
+            ><p className="numberhp2">
               {props.hp} 
-            </h3>
-          </div>
+              </p>
+            </p></p>
               <div className={props.className}>
-          {/*mon insertion*/}
-          
-          <img
+         <img
             className="playerGame"
             src={props.image}
             alt="pokemon"
@@ -31,8 +30,7 @@ const PlayerHuman = (props) => {
         </div>
       </div>
       <div className="stats-human">
-        <h1 className="playernamecpu">{props.name}</h1>
-        <p>hp: {props.hp}</p>
+        <h1 className="playernamecpu">{props.name} <span className="playerVS">VS</span></h1>       
         <div className="attack-defence-human">
           <div className="attack-human">
             <p>attack:{props.attack}.</p>
