@@ -73,26 +73,26 @@ const Game = () => {
   };
   console.log(handleClick)
   const attack = () => {
-    // let newHp = playerCpu.hp + 30;
-    // if (newHp <= 0) {
-    //   newHp = 0;
-    // }
+    let newHp = playerCpu.hp + 30;
+    if (newHp <= 0) {
+      newHp = 0;
+    }
     setPlayerCpu({...playerCpu, hp: newHp});
-    // if (newHp > 0) {
-    //   setTimeout(() => {
-    //     if (playerHuman.hp > 0) {
-    //       counterAttack();
-    //     }
-    //   }, 0);
-    // }
-    // setTimeout(() => {
-    //   if (newHp <= 0) {
-    //     setClassName("dead");
-    //     setTimeout(() => {
-    //       setWinner(true);
-    //     }, 1000);
-    //   }
-    // });
+    if (newHp > 0) {
+      setTimeout(() => {
+        if (playerHuman.hp > 0) {
+          counterAttack();
+        }
+      }, 0);
+    }
+    setTimeout(() => {
+      if (newHp <= 0) {
+        setClassName("dead");
+        setTimeout(() => {
+          setWinner(true);
+        }, 1000);
+      }
+    });
   };
   
 

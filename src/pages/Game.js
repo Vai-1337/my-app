@@ -13,15 +13,14 @@ import poke1 from "../asset/poke1.png";
 import "../css/game.css";
 
 const Game = () => {
-  const {value, value2, value3, value8, value9} = useContext(PokeContext);
+  const {value, value2, value8, value9} = useContext(PokeContext);
   const [data] = value;
   const [isLoading, setIsLoading] = value2;
-  const [isActive, setActive] = value3;
-  const [currentAttacker, setCurrentAttacker] = useState(null);
+  const [showGame, setShowGame] = useState(false);
 
   const [stat] = value8;
   const [stat2] = value9;
-  console.log(stat);
+  console.log(stat);  
 
   const [className, setClassName] = useState("cpu");
   const [classNameHuman, setClassNameHuman] = useState("human");
@@ -49,58 +48,6 @@ const Game = () => {
     speed: stat2.stats[5].base_stat,
   });
 
-  const attack = () => {
-    setCurrentAttacker(playerHuman.name);
-    setTimeout(() => {
-      setCurrentAttacker(null);
-    }, 2000);
-    let newHp = playerCpu.hp - 50;
-    if (newHp <= 0) {
-      newHp = 0;
-    }
-    setPlayerCpu({...playerCpu, hp: newHp});
-    if (newHp > 0) {
-      setClassName("blink")
-        setTimeout(() => {
-          if (playerHuman.hp > 0) {
-            counterAttack();
-          }
-        }, 0);
-    }
-
-    setTimeout(() => {
-      if (newHp <= 0) {
-        setClassName("dead");
-        setTimeout(() => {
-          setWinner(true);
-        }, 1000);
-      }
-    });
-  };
-
-  const counterAttack = () => {
-    setCurrentAttacker(playerCpu.name);
-    setTimeout(() => {
-      setCurrentAttacker(null);
-    }, 2000);
-    setTimeout(() => {
-      let newHp = playerHuman.hp - 40;
-      if (newHp <= 0) {
-        newHp = 0;
-      }
-      setPlayerHuman({...playerHuman, hp: newHp});    
-      if (newHp <= 0) {
-        setClassNameHuman("deadhuman");        
-        setTimeout(() => {
-        setLoser(true);
-        },100);
-        playerHuman.hp = 0;
-      }else{
-        
-        counterAttack(null) 
-      }
-    }, 1000);
-  };
 
   const handleClick = () => {
     setTimeout(() => {
@@ -111,6 +58,51 @@ const Game = () => {
       setClassName("blink");
     });
   };
+  const attack = () => {    
+    let newHp = playerCpu.hp - 50;
+    if (newHp <= 0) {
+      newHp = 0;
+    }
+    setPlayerCpu({...playerCpu, hp: newHp});
+    if (newHp > 0) {
+      setClassName("blink");
+      setTimeout(() => {
+        if (playerHuman.hp > 0) {
+          counterAttack();
+        }
+      }, 0);
+    }
+    setTimeout(() => {
+      if (newHp <= 0) {
+        setClassName("dead");
+        setTimeout(() => {
+          setWinner(true);
+        }, 1000);
+      }
+    });
+  };
+
+
+  const counterAttack = () => {
+    setTimeout(() => {
+      let newHp = playerHuman.hp - 40;
+      if (newHp <= 0) {
+        newHp = 0;
+      }
+      setPlayerHuman({...playerHuman, hp: newHp});
+      if (newHp <= 0) {
+        setClassNameHuman("deadhuman");
+        setTimeout(() => {
+          setLoser(true);
+        }, 100);
+        playerHuman.hp = 0;
+      } else {
+        counterAttack(null);
+      }
+    }, 1000);
+  };
+
+  
 
   return (
     <>
@@ -130,11 +122,12 @@ const Game = () => {
                 style={{width: "1115px", height: "755px"}}
               />
             </div>
-           
+
             <div className="decor-game">
-            {!loser &&  <button className="attack-btn" onClick={handleClick}>
-              </button> }
-              
+              {!loser && (
+                <button className="attack-btn" onClick={handleClick}></button>
+              )}
+
               <img
                 src={decor}
                 alt="decor"

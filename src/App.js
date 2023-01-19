@@ -25,7 +25,7 @@ const App = () => {
 <>    <div className="divGeneral">
       <NavBar />
       <div>
-      <h1 className="welcome" >Player is  {username}!</h1>     
+      <h1 className="welcome" >Pokemon Trainer   {username}</h1>     
     </div>
    
       <Routes className='testtest'>

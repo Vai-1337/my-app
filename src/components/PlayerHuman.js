@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 
 const PlayerHuman = (props) => {
   const [healthPointsHuman, setHealthPointsHuman] = useState(props.hp);
-  // useEffect(()=>{
-  //   setHealthPointsHuman((props.hp/100)*100)
-  //   console.log(props.hp)
-  // },[props.hp])
+  useEffect(()=>{
+    setHealthPointsHuman((props.hp/100)*100)
+    console.log(props.hp)
+  },[props.hp])
 
   return (
     <>

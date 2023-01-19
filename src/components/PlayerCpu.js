@@ -3,10 +3,10 @@ import {useState, useEffect} from "react";
 
 const PlayerCpu = props => {
   const [healthPointsCpu, setHealthPointsCpu] = useState(props.hp);
-  // useEffect(()=>{
-  //   setHealthPointsCpu((props.hp/100)*100)
-  //   console.log(props.hp)
-  // },[props.hp])
+  useEffect(()=>{
+    setHealthPointsCpu((props.hp/100)*100)
+    console.log(props.hp)
+  },[props.hp])
 
   return (
     <>

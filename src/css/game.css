@@ -92,7 +92,7 @@
 }
 .full-human {
   width: 350px;
-  height: 550px;
+  height: 530px;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -100,11 +100,12 @@
 
 /* stats */
 .stats-human {
-  border: 5px solid rgb(90, 102, 58);
   width: 350px;
+  margin-right: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 250px;
 }
 .attack-defence-human {
   border: 5px solid rgb(0, 149, 255);
@@ -128,13 +129,11 @@
 }
 
 .human {
-  box-shadow: 5px 10px 10px black;
-  outline: 2px solid red;
   animation-name: move-lightly-human;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  margin-top: 200px;
+  margin-top: 330px;
   margin-left: 30px;
   z-index: 2;
 }
@@ -153,7 +152,8 @@
 
 /* image + stats */
 .full-cpu {
-  /* border: 5px solid rgb(234, 99, 236); */
+  /* border: 5px solid rgb(234, 99, 236); */  
+  margin-top: 100px;
   width: 350px;
   height: 550px;
   display: flex;
@@ -161,13 +161,12 @@
 }
 /* image */
 .cpu {
-  box-shadow: 5px 10px 10px black;
-  outline: 2px solid red;
   animation-name: move-lightly-cpu;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  margin-top: 150px;
+  margin-top: 280px;
+  margin-left: 80px;
   z-index: 2;
 }
 @keyframes move-lightly-cpu {
@@ -179,11 +178,11 @@
   }
 }
 .stats-cpu {
-  border: 5px solid rgb(33, 176, 52);
   width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 370px;
 }
 .attack-defense-cpu {
   border: 5px solid rgb(0, 149, 255);
@@ -198,10 +197,9 @@
   align-items: center;
   width: 175px;
   display: grid;
-  border: 1px solid black;
 }
 .defense-cpu {
-  border: 5px solid rgb(215, 250, 124);
+  border: 5px solid rgb(134, 20, 62);
   display: flex;
   flex-direction: column;
   align-items: center;
