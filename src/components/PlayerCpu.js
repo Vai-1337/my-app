@@ -3,10 +3,15 @@ import {useState, useEffect} from "react";
 
 const PlayerCpu = props => {
   const [healthPointsCpu, setHealthPointsCpu] = useState(props.hp);
+  const [defensePointsCpu, setDefensePointsCpu] = useState(props.defense);
+
   useEffect(()=>{
     setHealthPointsCpu((props.hp/100)*100)
+    setDefensePointsCpu((props.defense/100)*100)
     console.log(props.hp)
-  },[props.hp])
+    console.log(props.defense)
+
+  }, [props.hp, props.defense])
 
   return (
     <>
@@ -19,6 +24,9 @@ const PlayerCpu = props => {
             }}
           ><p className="numberhp">
             {props.hp}
+            </p>
+            <p className="defense-human"  style={{width: `${defensePointsCpu}%`}}>
+            {/* <p className="numberhp2">{props.defense}</p>  */}
             </p>
           </p>
         </p>
@@ -44,7 +52,9 @@ const PlayerCpu = props => {
             <p>specialDefense: {props.specialDefense}</p>
           </div>
         </div>
-        <p>speed: {props.speed}</p>
+        <br />
+        <br />
+        {/* <p>speed: {props.speed}</p> */}
       </div>
     </>
   );

@@ -52,7 +52,6 @@ const Main = () => {
     handleChange();
   }, [searchTerm])
 
-  console.log(pokeData)
 
   loading && <h1>Loading...</h1>
   return (

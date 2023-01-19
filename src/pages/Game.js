@@ -20,7 +20,6 @@ const Game = () => {
 
   const [stat] = value8;
   const [stat2] = value9;
-  console.log(stat);  
 
   const [className, setClassName] = useState("cpu");
   const [classNameHuman, setClassNameHuman] = useState("human");
@@ -48,61 +47,105 @@ const Game = () => {
     speed: stat2.stats[5].base_stat,
   });
 
-
-  const handleClick = () => {
+  const handleClick = (e) => {
+    attack(); 
     setTimeout(() => {
-      attack();
+      setClassNameHuman("human-move");
+    });
+    setTimeout(() => {
+      setClassName("blink-cpu");
+    },1000); 
+    setTimeout(() => {
+      setClassNameHuman("human");
+    },3500);setTimeout(() => {
       setClassName("cpu");
-    }, 300);
-    setTimeout(() => {
-      setClassName("blink");
-    });
+    },3000);              
   };
-  const attack = () => {    
-    let newHp = playerCpu.hp - 50;
-    if (newHp <= 0) {
-      newHp = 0;
-    }
-    setPlayerCpu({...playerCpu, hp: newHp});
-    if (newHp > 0) {
-      setClassName("blink");
-      setTimeout(() => {
-        if (playerHuman.hp > 0) {
-          counterAttack();
-        }
-      }, 0);
-    }
+  const attack = () => {
+    let newDefense = playerCpu.defense - 100;
+    setPlayerCpu({...playerCpu, defense: newDefense});
     setTimeout(() => {
+      if (playerCpu)
+      counterAttack();
+    },4000);
+    if (newDefense <= 0) {
+      setPlayerCpu({...playerCpu, defense: 0});
+      if (playerCpu.defense <= 0) {
+      let newHp = playerCpu.hp - 50;
+      setPlayerCpu({...playerCpu, hp: newHp})
       if (newHp <= 0) {
-        setClassName("dead");
-        setTimeout(() => {
-          setWinner(true);
-        }, 1000);
+        setPlayerCpu({...playerCpu, hp: 0});}        
       }
-    });
+    }
+    // if (newDefense <= 0) {
+    //setPlayerCpu({...playerCpu, hp: newHp, defense: newDefense});
+    //   let newHp = playerCpu.hp - 10;
+    //   if (newDefense <= 0) {
+    //     newDefense = 0;
+    //     counterAttack();
+    //   }
+    //   setPlayerCpu({...playerCpu, hp: newHp, defense: newDefense});
+    //   if (newHp > 0) {
+    //     setClassName("blink");
+    //     setTimeout(() => {
+    //       if (playerHuman.hp > 0) {
+    //         counterAttack();
+    //       }
+    //     }, 0);
+    //   }
+    //   setTimeout(() => {
+    //     if (newHp <= 0) {
+    //       setClassName("dead");
+    //       setTimeout(() => {
+    //         setWinner(true);
+    //       }, 1000);
+    //     }
+    //   });
+    // }
   };
-
 
   const counterAttack = () => {
+    // setTimeout(() => {
+      let newDefense = playerHuman.defense - 100;
+    setPlayerHuman({...playerHuman, defense: newDefense});
     setTimeout(() => {
-      let newHp = playerHuman.hp - 40;
-      if (newHp <= 0) {
-        newHp = 0;
-      }
-      setPlayerHuman({...playerHuman, hp: newHp});
-      if (newHp <= 0) {
-        setClassNameHuman("deadhuman");
-        setTimeout(() => {
-          setLoser(true);
-        }, 100);
-        playerHuman.hp = 0;
-      } else {
-        counterAttack(null);
-      }
-    }, 1000);
-  };
+      setClassName("cpu-move");
+    });
+    setTimeout(() => {
+      setClassNameHuman("blink-human");
+    },500); 
+    setTimeout(() => {
+      setClassName("cpu");
+    },3000);
+    setTimeout(() => {
+      setClassNameHuman("human");
+    },3000);   
+    if (newDefense <= 0) {
+      setPlayerHuman({...playerHuman, defense: 0});
+      if (playerHuman.defense <= 0) {
+        let newHp = playerHuman.hp - 50;
+        setPlayerHuman({...playerHuman, hp: newHp})
+        if (newHp <= 0) {
+          setPlayerHuman({...playerHuman, hp: 0});}        
+        }
+    }      
+    
+    // let newHp = playerHuman.hp - 20;
+      // if (newHp <= 0) {
+      //   newHp = 0;
+      // }
 
-  
+    //   setPlayerHuman({...playerHuman, hp: newHp});
+    //   if (newHp <= 0) {
+    //     setClassNameHuman("deadhuman");
+    //     setTimeout(() => {
+    //       setLoser(true);
+    //     }, 100);//     playerHuman.hp = 0;    //   } else {
+    //     counterAttack(null);
+    //   }
+    // }, 4000
+    // );
+  };
 
   return (
     <>
