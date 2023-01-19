@@ -17,7 +17,7 @@ const PlayerCpu = (props) => {
         </div>
       </div>
       <div className="stats-cpu">
-        <h1>{props.name}</h1>
+      <h1 className="playernamecpu">{props.name}</h1>
         <p>hp: {props.hp}</p>
         <div className="attack-defense-cpu">
           <div className="attack-cpu">

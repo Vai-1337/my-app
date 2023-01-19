@@ -7,6 +7,7 @@ const NavBar = () => {
     <>
     <div className='navbar'>
       <img style={{width:"150px"}} src="https://wallpaperaccess.com/full/18957.jpg" alt=""/>
+     
       <Link style={{textDecoration:"none"}} to='/'><button className='button'><span>Home</span></button></Link>
       <Link style={{textDecoration:"none"}} to='/pokedex'><button className='button'><span>Pokedex</span></button></Link>
       <Link style={{textDecoration:"none"}} to='/credits'><button className='button'><span>Credits</span></button></Link>

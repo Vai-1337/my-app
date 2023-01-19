@@ -132,6 +132,7 @@ if (!showGame) {
   return (
     <>     
       <div className="decorciel">
+    
       {(e)=>e.preventDefault()}
         {data.result}
         {isLoading && ( 
@@ -149,6 +150,7 @@ if (!showGame) {
                 style={{width: "1115px", height: "755px"}}
               />
             </div>
+            
 
             <div className="decor-game">
               {!loser && (
