@@ -85,6 +85,7 @@ const Game = () => {
     let newDefense = playerCpu.defense - playerHuman.attack;
     setPlayerCpu({...playerCpu, defense: newDefense});
     
+    // className("cpu") &&
     setTimeout(() => {
       counterAttack();
     }, 3000);
@@ -127,7 +128,7 @@ const Game = () => {
   //   }
   const counterAttack = () => {
     if (playerCpu.attack >= playerHuman.hp + playerHuman.defense) {
-
+      setPlayerHuman({...playerHuman, hp: 0})
       setClassName("cpu-move");
       setTimeout(() => {
         setClassNameHuman("deadhuman");
@@ -137,7 +138,7 @@ const Game = () => {
       }, 1000);
     }
       if (playerHuman.hp + playerHuman.defense > playerCpu.attack) {
-        setPlayerHuman({...playerHuman, hp: 0})       
+        //        
         setClassName("cpu-move");
    
       setTimeout(() => {
