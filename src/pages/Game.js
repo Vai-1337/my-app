@@ -52,11 +52,21 @@ const Game = () => {
   useEffect(() => {
     const SpecialDefense =
       playerHuman.hp < 100 ? setSpecialDefensePoints(true) : "";
-  }, [ playerHuman.hp]);
+  }, [playerHuman.hp]);
 
   const handleClick = () => {
+    if (playerCpu.hp + playerCpu.defense <= playerHuman.attack) {
+      setPlayerCpu({...playerCpu, hp: 0});
+      setClassNameHuman("human-move");
+      setTimeout(() => {
+        setClassName("dead");
+      },500)      
+      setTimeout(() => {
+        setWinner(true);
+      }, 1000);
+    }
     attack();
-    if (playerCpu.hp > 0) {
+    if (playerCpu.hp + playerCpu.defense >= playerHuman.attack) {
       setTimeout(() => {
         setClassNameHuman("human-move");
       });
@@ -69,97 +79,103 @@ const Game = () => {
       setTimeout(() => {
         setClassName("cpu");
       }, 2500);
-    }  ;
-    
-  };
-  const attack = () => {   
-    let newDefense = playerCpu.defense - playerHuman.attack;  
+    }       
+  }; 
+  const attack = () => {
+    let newDefense = playerCpu.defense - playerHuman.attack;
     setPlayerCpu({...playerCpu, defense: newDefense});
-    // setTimeout(() => {      
-      setTimeout(() => {
-        
-        counterAttack()
-      },3000) 
-
-      if (newDefense <= 0) {
-        setPlayerCpu({...playerCpu, defense: 0});
-        if (playerCpu.defense <= 0) {
-          let newHp = playerCpu.hp - playerHuman.attack;
-          setPlayerCpu({...playerCpu, hp: newHp});
-          if (newHp <= 0) {
-            setPlayerCpu({...playerCpu, hp: 0});
-          }
-        
-          // if (newHp <= 0) {
-          //   setClassNameHuman("dead");
-          //   setTimeout(() => {
-          //     setLoser(true);
-          //   }, 2000);
-          // }
-        }
-        
-      }
-      // if (playerCpu.hp > 0)
-      // counterAttack();      
-    // },3000);
-      // rajout else il contre attack pas
     
-    // if (newDefense <= 0) {
-    //   setPlayerCpu({...playerCpu, defense: 0});
-    //   if (newDefense <= 0) {
-    //     let newHp = playerCpu.hp - playerHuman.attack;
-    //     setPlayerCpu({...playerCpu, hp: newHp});}
-          
-    //     if (playerCpu.hp <= 0) {
-    //       setPlayerCpu({...playerCpu, hp: playerHuman.hp});
-    //     }
-    //   }
+    setTimeout(() => {
+      counterAttack();
+    }, 3000);
+
+    if (newDefense <= 0) {
+      setPlayerCpu({...playerCpu, defense: 0});
+      if (playerCpu.defense <= 0) {
+        let newHp = playerCpu.hp - playerHuman.attack;
+        setPlayerCpu({...playerCpu, hp: newHp});
+        if (newHp <= 0) {
+          setPlayerCpu({...playerCpu, hp: 0});
+        }
+      }
+    }
+  };
+
+  // if (playerCpu.hp > 0)
+  // counterAttack();
+  // },3000);
+  // rajout else il contre attack pas
+
+  // if (newDefense <= 0) {
+  //   setPlayerCpu({...playerCpu, defense: 0});
+  //   if (newDefense <= 0) {
+  //     let newHp = playerCpu.hp - playerHuman.attack;
+  //     setPlayerCpu({...playerCpu, hp: newHp});}
+
+  //     if (playerCpu.hp <= 0) {
+  //       setPlayerCpu({...playerCpu, hp: playerHuman.hp});
+  //     }
+  //   }
   //       if (newHp <= 0) {
   //         setClassName("dead");
   //         setTimeout(() => {
   //           setWinner(true);
   //         }, 2000);
-          
-  //       } 
+
+  //       }
   //     }
   //   }
-  };
- 
-  const counterAttack = () => {  
-    
-    if (playerCpu.hp > 0) {
-    let newDefense = playerHuman.defense - playerCpu.attack;
-    setPlayerHuman({...playerHuman, defense: newDefense});
-          setClassName("cpu-move");
-        setTimeout(() => {
-      setClassNameHuman("blink-human");
-    }, 500);
-    setTimeout(() => {
-      setClassName("cpu");
-    }, 2500);
-    setTimeout(() => {
-      setClassNameHuman("human");
-    }, 2500); 
-    
-    if (newDefense <= 0) {
-      setPlayerHuman({...playerHuman, defense: 0});
-      if (playerHuman.defense <= 0) {
-        let newHp = playerHuman.hp - playerCpu.attack;
-        setPlayerHuman({...playerHuman, hp: newHp});
-        if (newHp <= 0) {
-          setPlayerHuman({...playerHuman, hp: 0});
-        }
-        if (newHp === 0) {
-          setClassNameHuman("dead");}
-        //   setTimeout(() => {
-        //     setLoser(true);
-        //   }, 2000);
-        // }
-      }
-      
+  const counterAttack = () => {
+    if (playerCpu.attack >= playerHuman.hp + playerHuman.defense) {
+
+      setClassName("cpu-move");
+      setTimeout(() => {
+        setClassNameHuman("deadhuman");
+      },500)      
+      setTimeout(() => {
+        setLoser(true);
+      }, 1000);
     }
-  }
+      if (playerHuman.hp + playerHuman.defense > playerCpu.attack) {
+        setPlayerHuman({...playerHuman, hp: 0})       
+        setClassName("cpu-move");
+   
+      setTimeout(() => {
+        setClassNameHuman("blink-human");
+      }, 500);
+      setTimeout(() => {
+        setClassName("human");
+      }, 2500);
+      setTimeout(() => {
+        setClassNameHuman("cpu");
+      }, 2000);
+    }
+    
+    
+   
+
+      let newDefense = playerHuman.defense - playerCpu.attack;
+      setPlayerHuman({...playerHuman, defense: newDefense});
+      if (newDefense <= 0) {
+        setPlayerHuman({...playerHuman, defense: 0});
+        if (playerHuman.defense <= 0) {
+          let newHp = playerHuman.hp - playerCpu.attack;
+          setPlayerHuman({...playerHuman, hp: newHp});
+          if (newHp <= 0) {
+            setPlayerHuman({...playerHuman, hp: 0});
+          }
+          if (newHp === 0) {
+            setClassNameHuman("dead");
+          }
+        }
+      }
+    
   };
+  //   setTimeout(() => {
+  //     setLoser(true);
+  //   }, 2000);
+  // }
+
   // let newHp = playerHuman.hp - 20;
   // if (newHp <= 0) {
   //   newHp = 0;
@@ -200,7 +216,7 @@ const Game = () => {
           <p className='specialDefenseBoutonConsigne'>(press "B")</p>
           <button className='defense-btn' onClick={()=>{setSpecialDefensePoints(false);setBouclier(true)}}></button>
            </> */}
-            
+
             {/* {bouclier &&  
         <bouton className='bouclier'>.</bouton>
         } */}
