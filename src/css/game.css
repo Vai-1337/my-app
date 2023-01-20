@@ -103,6 +103,20 @@
   background-color: transparent;
   border-radius: 20px;
   font-weight: bold;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 7;
+  margin-bottom: 400px;
+}
+.loser {
+  background-color: transparent;
+  border-radius: 20px;
+  font-weight: bold;
   width: 400px;
   height: 400px;
   display: flex;
@@ -110,7 +124,7 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  z-index: 3;
+  z-index: 4;
   margin-bottom: 400px;
 }
 .player {
@@ -166,6 +180,15 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  z-index: -1;
+}
+.attack-defence-human:hover{
+  border: 5px solid rgb(0, 149, 255);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 5;
+  cursor: pointer;
 }
 .attack-human {
   border: 5px solid rgb(215, 250, 124);
@@ -243,12 +266,14 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 370px;
+  z-index: -1;
 }
 .attack-defense-cpu {
   border: 5px solid rgb(0, 149, 255);
   width: 100%;
   display: flex;
   justify-content: space-between;
+  z-index: -1; 
 }
 .attack-cpu {
   border: 5px solid rgb(215, 250, 124);
@@ -477,7 +502,7 @@
   border-radius: 100px;
   background-color: transparent;
   cursor: pointer;
-  z-index: 4;
+  z-index: 8;
   margin-left: 840px;
   margin-bottom: 218px;
   opacity: 0.1;
@@ -551,4 +576,13 @@
   opacity: 0.4;
   background-color: #0d6efd;
 }
+.winwinwin{
+  position: absolute;
+  margin-bottom: 350px;
+  z-index: 6;
+  width: 900px;
+}
+
+
+
 

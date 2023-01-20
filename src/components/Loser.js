@@ -8,7 +8,7 @@ const Loser = props => {
 
   return (
     <>
-      <div className="winner">
+      <div className="loser">
        
         <img
           alt="winner"

@@ -60,10 +60,13 @@ const Game = () => {
       setClassNameHuman("human-move");
       setTimeout(() => {
         setClassName("dead");
-      },500)      
+      }, 500);
       setTimeout(() => {
         setWinner(true);
-      }, 1000);
+      }, 1500);
+      setTimeout(() => {
+        setClassNameHuman("human");
+      }, 2000);
     }
     attack();
     if (playerCpu.hp + playerCpu.defense >= playerHuman.attack) {
@@ -79,12 +82,12 @@ const Game = () => {
       setTimeout(() => {
         setClassName("cpu");
       }, 2500);
-    }       
-  }; 
+    }
+  };
   const attack = () => {
     let newDefense = playerCpu.defense - playerHuman.attack;
     setPlayerCpu({...playerCpu, defense: newDefense});
-    
+
     // className("cpu") &&
     setTimeout(() => {
       counterAttack();
@@ -128,19 +131,21 @@ const Game = () => {
   //   }
   const counterAttack = () => {
     if (playerCpu.attack >= playerHuman.hp + playerHuman.defense) {
-      setPlayerHuman({...playerHuman, hp: 0})
+      setPlayerHuman({...playerHuman, hp: 0});
       setClassName("cpu-move");
       setTimeout(() => {
         setClassNameHuman("deadhuman");
-      },500)      
+      }, 500);
+
       setTimeout(() => {
         setLoser(true);
       }, 1000);
+      setTimeout(() => {
+        setClassName("cpu");
+      }, 2500);
     }
-      if (playerHuman.hp + playerHuman.defense > playerCpu.attack) {
-        //        
-        setClassName("cpu-move");
-   
+    if (playerHuman.hp + playerHuman.defense > playerCpu.attack) {
+      setClassName("cpu-move");
       setTimeout(() => {
         setClassNameHuman("blink-human");
       }, 500);
@@ -151,26 +156,22 @@ const Game = () => {
         setClassNameHuman("cpu");
       }, 2000);
     }
-    
-    
-   
 
-      let newDefense = playerHuman.defense - playerCpu.attack;
-      setPlayerHuman({...playerHuman, defense: newDefense});
-      if (newDefense <= 0) {
-        setPlayerHuman({...playerHuman, defense: 0});
-        if (playerHuman.defense <= 0) {
-          let newHp = playerHuman.hp - playerCpu.attack;
-          setPlayerHuman({...playerHuman, hp: newHp});
-          if (newHp <= 0) {
-            setPlayerHuman({...playerHuman, hp: 0});
-          }
-          if (newHp === 0) {
-            setClassNameHuman("dead");
-          }
+    let newDefense = playerHuman.defense - playerCpu.attack;
+    setPlayerHuman({...playerHuman, defense: newDefense});
+    if (newDefense <= 0) {
+      setPlayerHuman({...playerHuman, defense: 0});
+      if (playerHuman.defense <= 0) {
+        let newHp = playerHuman.hp - playerCpu.attack;
+        setPlayerHuman({...playerHuman, hp: newHp});
+        if (newHp <= 0) {
+          setPlayerHuman({...playerHuman, hp: 0});
+        }
+        if (newHp === 0) {
+          setClassNameHuman("dead");
         }
       }
-    
+    }
   };
   //   setTimeout(() => {
   //     setLoser(true);
@@ -237,9 +238,16 @@ const Game = () => {
                 <div className="blockFight">
                   <PlayerHuman {...playerHuman} className={classNameHuman} />
                 </div>
+
                 {winner && <Winner winner={winner} />}
                 {loser && <Loser loser={loser} />}
-
+                {winner && (
+                  <img
+                    className="winwinwin"
+                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5e76d5b9-f266-4b2e-bcf5-48850bcafb4d/d4k61n9-7a656974-906c-44dc-8ee6-939b445f221f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi81ZTc2ZDViOS1mMjY2LTRiMmUtYmNmNS00ODg1MGJjYWZiNGQvZDRrNjFuOS03YTY1Njk3NC05MDZjLTQ0ZGMtOGVlNi05MzliNDQ1ZjIyMWYucG5nIn1dXX0.DYCnGpAjp9m3twiPdQzIuofBu_04iWZxv31Ta-eeOnk"
+                    alt="sasha"
+                  />
+                )}
                 <div>
                   <PlayerCpu {...playerCpu} className={className} />
                 </div>
